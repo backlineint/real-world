@@ -2,7 +2,7 @@
 menu:
   Home: /
   Archives: /archives
-  Test: /test
+  Todo: /Todo
 
 # Logo Image Source
 logo_src: /images/logo.svg
@@ -43,12 +43,12 @@ google_analytics:
 
 # Social Accounts
 twitter_url: https://twitter.com/?lang=en
-facebook_url: https://www.facebook.com/
-instagram_url: https://www.instagram.com/
-dribble_url: https://dribbble.com/
+#facebook_url: https://www.facebook.com/
+#instagram_url: https://www.instagram.com/
+#dribble_url: https://dribbble.com/
 github_url: https://github.com/klugjo/hexo-theme-phantom/commits?author=klugjo
-googleplus_url: https://plus.google.com/
-behance_url: https://www.behance.net/
-fivehundredpx_url: https://500px.com/
+#googleplus_url: https://plus.google.com/
+#behance_url: https://www.behance.net/
+#fivehundredpx_url: https://500px.com/
 email_url: \#
-rss_url: \#
+#rss_url: \#
