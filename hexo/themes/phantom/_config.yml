@@ -2,16 +2,17 @@
 menu:
   Home: /
   Archives: /archives
+  Resources: /Resources
   Todo: /Todo
 
 # Logo Image Source
 logo_src: /images/logo.svg
 
 # Theme Main Subtitle
-subtitle_main: This is the theme main subtitle which can contain HTML.
+subtitle_main: Find out what happens when component based theming in Drupal 8 stops being polite... and starts getting real.
 
 # Theme Secondary subtitle
-susbtitle_secondary: This is the secondary subtitle.
+susbtitle_secondary: This is the true story of a team of developers, Drupal 8, Twig, and Pattern Lab living together under one roof, and building more than just a card component.  Be prepared to re-live the highs, the lows, and look forward to dreams of the future.
 
 # Footer About Section
 about_footer: This is the footer about section, which can also include HTML.

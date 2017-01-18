@@ -6,3 +6,4 @@ tags:
 
 * Onboarding new developers
 * Too much logic in templates - "This should be happening in preprocess"
+* Breaking quickedit / panels.
