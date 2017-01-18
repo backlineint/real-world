@@ -24,3 +24,5 @@ Workflow: Build components in Pattern Lab first, then map to Drupal.
 
 Theme structure.  Everything lives in source.
 In a the future / in a perfect world, Pattern Lab would be an external submodule that could completely live on its own.
+
+Note: Initial cover images should be the towns from the real world seasons.
