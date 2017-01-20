@@ -1,16 +1,15 @@
 ---
-title: 1. The Basics
-date: 2017-01-31 12:30:33
+title: 2. The Basics
+date: 2017-01-19 12:30:33
 tags:
 ---
 
 Section Outline:
 * ...
 
-There has been quite a bit of ink and video spilled about component based approahces to theming in Drupal 8 (and you can look back to a number of them in the <a href="/Resources">resources section</a>.)
+Notes:
 
-I'm not going to introduce or sell you on this style guide aproach, let's just dive in.
-
+List out all of the tools.  Discuss how they are assembled.
 Everyone builds a card component for some reason, so let's do that.
 
 What is the easiest way to spin up an example card?  Probably still neato refills.
