@@ -7,4 +7,5 @@ Running Todo List:
 * Try to set up composer Drupal install.
 
 Notes:
-* Until supporting drupal codebase exists, create supporting gists for code samples. 
+* Until supporting drupal codebase exists, create supporting gists for code samples.
+* Note: Initial cover images should be the towns from the real world seasons.
