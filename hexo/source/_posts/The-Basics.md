@@ -7,7 +7,7 @@ tags:
 Section Outline:
 * Our tools:
     * Main Pillars: Drupal 8, Theme of Your Choice (Zurb Foundation), Pattern Lab
-    * Supporting Modules: Components, Twig Field Value, Panels/Page Manager, Paragraphs
+    * Supporting Modules: Components
 * Theme Structure:
     * All theme source lives in theme_name/source - patterns, scss, js, compiled css.
     * One exception is presenter templates - they live outside of source in theme_name/templates (also layouts for page manager layouts)

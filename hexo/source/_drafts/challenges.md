@@ -9,4 +9,5 @@ tags:
 * Breaking quickedit / panels.
 
 Notes:
+* This stuff needs to live somewhere - find a spot for it.
 * Image for challenges needs to be a jar of peanut butter.
