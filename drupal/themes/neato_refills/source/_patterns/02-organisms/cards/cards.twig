@@ -1,0 +1,18 @@
+<div class="cards">
+  {%  if rows %}
+    {% for row in rows %}
+        {{ row.content }}
+    {% endfor %}
+  {% else %}
+    {% for listItem in listItems.three %}
+        {% include "@molecules/card/card.twig"
+          with {
+            'img_src': 'https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png',
+            'img_alt': 'Card Image',
+            'header': listItem.header,
+            'copy': listItem.copy
+          }
+        %}
+    {% endfor %}
+  {% endif %}
+</div>

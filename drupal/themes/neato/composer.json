@@ -1,0 +1,20 @@
+{
+  "name": "drupal/neato",
+  "type": "drupal-theme",
+  "description": "Base Drupal theme based on the Neat grid system from Thoughtbot.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/neato",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Kevin Quillen (kevinquillen)",
+      "homepage": "https://www.drupal.org/u/kevinquillen",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/issues/neato",
+    "source": "http://cgit.drupalcode.org/neato"
+  }
+}

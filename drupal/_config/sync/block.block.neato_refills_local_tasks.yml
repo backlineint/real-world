@@ -1,0 +1,22 @@
+uuid: 8f0eb4e8-5ba4-41ab-8b68-a82ad2ad103a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - neato_refills
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: neato_refills_local_tasks
+theme: neato_refills
+region: content
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

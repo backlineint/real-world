@@ -1,0 +1,57 @@
+.hero {
+
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-radius: 3px !default;
+  $large-screen: em(860) !default;
+
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $hero-color: white;
+  $gradient-angle: 10deg;
+
+  background-color: #53aee0;
+  background-image: linear-gradient(#53aee0,#3da4dc);
+  background-size: cover;
+  padding-bottom: 3em;
+
+  .hero-logo img {
+    height: 4em;
+    margin-bottom: 1em;
+  }
+
+  .hero-inner {
+    @include outer-container;
+    @include clearfix;
+    color: $hero-color;
+    margin: auto;
+    padding: 3.5em;
+    text-align: center;
+
+    .hero-copy {
+      text-align: center;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5em;
+        font-weight: 200;
+
+        @include media($large-screen) {
+          font-size: 4rem;
+        }
+
+        strong {
+          font-weight: 700;
+        }
+      }
+
+      p {
+        font-weight: 200;
+        line-height: 1.4em;
+
+        @include media($large-screen) {
+          font-size: 1.4em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "label": "Quote",
+  "items":[
+    { "content":"This is a quote" },
+    { "content":"This is a second quote" }
+  ]
+}

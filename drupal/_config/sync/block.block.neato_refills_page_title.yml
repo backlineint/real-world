@@ -1,0 +1,20 @@
+uuid: 87c77662-8639-4983-b25c-095cedceef56
+langcode: en
+status: true
+dependencies:
+  theme:
+    - neato_refills
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: neato_refills_page_title
+theme: neato_refills
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

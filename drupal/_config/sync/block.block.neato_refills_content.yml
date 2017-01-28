@@ -1,0 +1,22 @@
+uuid: 0f5c0399-2e2a-4a41-8a77-4b6fc8acf9e6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - neato_refills
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: neato_refills_content
+theme: neato_refills
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

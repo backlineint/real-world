@@ -1,0 +1,22 @@
+uuid: de82d4d4-8b9e-401a-a3fb-f0006a30c89a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - neato_refills
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: neato_refills_powered
+theme: neato_refills
+region: header
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

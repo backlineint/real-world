@@ -1,0 +1,22 @@
+uuid: 83c07b0d-896a-434c-96f2-4ce6abe03319
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - neato_refills
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: neato_refills_messages
+theme: neato_refills
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,15 @@
+// Quote
+//
+// A quote that can be offset for emphasis.
+//
+// Markup: quote.twig
+//
+// Style Guide: Text.Quote
+.quote {
+  text-align: center;
+  margin: 50px;
+  padding: 25px;
+}
+.quote__label {
+  font-weight: bold;
+}

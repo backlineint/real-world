@@ -1,0 +1,17 @@
+{
+  "name": "walkthrough",
+  "version": "1.0.0",
+  "description": "Dependencies for theme playground",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-drush": "0.0.7",
+    "grunt-kss": "^5.0.0",
+    "kss": "^3.0.0-beta.12",
+    "load-grunt-tasks": "^3.5.0"
+  },
+  "author": "Brian Perry",
+  "license": "GPL-2.0"
+}

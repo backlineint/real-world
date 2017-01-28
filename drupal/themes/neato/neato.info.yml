@@ -1,0 +1,18 @@
+name: Neato!
+type: theme
+base theme: classy
+description: Base Drupal theme based on the Neat grid system from Thoughtbot.
+# core: 8.x
+regions:
+  header: Header
+  featured: Featured
+  sidebar_first: 'Sidebar first'
+  content: Content
+  sidebar_second: 'Sidebar second'
+  footer_top: 'Footer Top'
+  footer_bottom: 'Footer Bottom'
+# Information added by Drupal.org packaging script on 2016-03-18
+version: '8.x-1.4'
+core: '8.x'
+project: 'neato'
+datestamp: 1458310539

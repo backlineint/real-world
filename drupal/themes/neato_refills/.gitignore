@@ -1,0 +1,11 @@
+# Local Gulp Configuration
+config.js
+
+# Node dependencies
+node_modules
+
+# OS Files
+.DS_Store
+
+# Theming Workflow
+*/maps

@@ -1,0 +1,16 @@
+{
+  "name": "neato",
+  "version": "8.1.2",
+  "authors": [
+    "Kevin Quillen <kevinquillen@gmail.com>"
+  ],
+  "description": "Base Drupal theme based on the Neat grid system.",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "bourbon": "~4.2.6",
+    "neat": "~1.7.2",
+    "bitters": "~1.1.0",
+    "normalize.css": "~3.0.2"
+  }
+}

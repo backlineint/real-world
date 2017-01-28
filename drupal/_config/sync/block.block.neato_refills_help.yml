@@ -1,0 +1,22 @@
+uuid: 6e829f26-26ba-446c-91c4-4aa35afd06a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - neato_refills
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: neato_refills_help
+theme: neato_refills
+region: content
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

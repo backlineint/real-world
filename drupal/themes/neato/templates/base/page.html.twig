@@ -1,0 +1,67 @@
+<div role="document" class="page">
+  {%  if page.header %}
+    <header id="site-header">
+      <div class="outer-wrapper">
+        {{ page.header }}
+      </div>
+    </header>
+  {% endif %}
+
+  {%  if page.featured %}
+    <section id="featured">
+      <div class="columns">
+        {{ page.featured }}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if messages %}
+    <section id="messages">
+      <div class="outer-wrapper">
+        {{ messages }}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if breadcrumb %}
+    <section id="breadcrumb">
+      <div class="outer-wrapper">
+        {{ breadcrumb }}
+      </div>
+    </section>
+  {% endif %}
+
+  <main role="main" class="outer-wrapper">
+    {% if page.sidebar_first %}
+      <aside id="sidebar-first" role="complementary" class="sidebar">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+
+    <section id="content">
+      {{ page.content }}
+    </section>
+
+    {% if page.sidebar_second %}
+      <aside id="sidebar-second" role="complementary" class="sidebar">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
+  </main>
+
+  {% if page.footer_top or page.footer_bottom %}
+    <footer id="site-footer" role="contentinfo">
+      {% if page.footer_top %}
+        <section class="footer-top">
+          {{ page.footer_top }}
+        </section>
+      {% endif %}
+
+      {% if page.footer_bottom %}
+        <section class="footer-bottom">
+          {{ page.footer_bottom }}
+        </section>
+      {% endif %}
+    </footer>
+  {% endif %}
+</div>

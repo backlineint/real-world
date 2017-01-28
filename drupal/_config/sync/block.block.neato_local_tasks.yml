@@ -1,0 +1,22 @@
+uuid: b8be1f6a-8978-4052-9812-933b8a7816a0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - neato
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: neato_local_tasks
+theme: neato
+region: content
+weight: -40
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

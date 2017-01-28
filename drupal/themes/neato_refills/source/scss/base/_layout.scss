@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  main {
+    @include outer-container;
+    padding: 3em 0;
+  }
+
+  &.no-sidebars {
+    main {
+      section#content {
+        @include span-columns(12);
+      }
+    }
+  }
+
+  &.one-sidebar.sidebar-first {
+    main {
+      aside {
+        &#sidebar-first {
+          @include span-columns(4);
+        }
+      }
+
+      section#content {
+        @include span-columns(8);
+      }
+    }
+  }
+
+  &.one-sidebar.sidebar-second {
+    main {
+      aside {
+        &#sidebar-second {
+          @include span-columns(4);
+        }
+      }
+
+      section#content {
+        @include span-columns(8);
+      }
+    }
+  }
+
+  &.two-sidebars {
+    main {
+      aside {
+        &#sidebar-first {
+          @include span-columns(3);
+        }
+
+        &#sidebar-second {
+          @include span-columns(3);
+        }
+      }
+
+      section#content {
+        @include span-columns(6);
+      }
+    }
+  }
+}
+
+.outer-wrapper {
+  @include outer-container;
+}

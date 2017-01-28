@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAOA,MAAO;EACL,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;;AAEf,aAAc;EACZ,WAAW,EAAE,IAAI",
+"sources": ["../components/quote/quote.scss"],
+"names": [],
+"file": "style.css"
+}

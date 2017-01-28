@@ -1,0 +1,24 @@
+{%
+  set classes = [
+    'clearfix',
+    'text-formatted',
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% set attributes = attributes.addClass(classes) %}
+{% set modifier_class = attributes.storage().class|join(' ') %}
+{% set attributes = attributes.removeAttribute('class')|without('role', 'aria-label') %}
+
+{% set title_attributes = title_attributes.addClass(title_classes) %}
+{% set title_modifier_class = title_attributes.storage().class|join(' ') %}
+
+{% include "@components/quote/quote.twig" %}

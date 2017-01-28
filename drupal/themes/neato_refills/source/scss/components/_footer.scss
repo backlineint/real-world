@@ -1,0 +1,79 @@
+#site-footer {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $medium-screen: em(640) !default;
+  $large-screen: em(860) !default;
+
+  ul:not(.contextual-links) {
+    padding: 0;
+
+    li {
+      list-style: none;
+      line-height: 1.5em;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  section {
+    @include outer-container;
+  }
+
+  $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
+  $footer-color: white;
+  $footer-link-color: transparentize($footer-color, 0.6);
+  $footer-disclaimer-color: transparentize($footer-color, 0.35);
+
+  background: $footer-background;
+  padding: ($base-spacing * 2) $gutter;
+  width: 100%;
+
+  .footer-top {
+    margin-bottom: 1em;
+  }
+
+  .footer-logo {
+    margin-bottom: 2em;
+    text-align: center;
+
+    img {
+      height: 3em;
+    }
+  }
+
+  .footer-bottom {
+    p {
+      color: $footer-disclaimer-color;
+      font-size: 0.9em;
+      line-height: 1.5em;
+      margin: auto;
+    }
+  }
+
+  .copyright {
+    @include span-columns(4);
+    padding-left: 1em;
+  }
+
+  .utility-menu {
+    @include span-columns(8);
+
+    ul {
+      text-align: right;
+      font-weight: 600;
+
+      li {
+        display: inline;
+        padding-right: 1em;
+
+        a {
+          color: $footer-disclaimer-color;
+        }
+      }
+    }
+  }
+}

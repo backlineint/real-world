@@ -1,0 +1,120 @@
+#primary-tasks {
+  &.tabs {
+    ///////////////////////////////////////////////////////////////////////////////////
+    $base-border-color: gainsboro !default;
+    $base-background-color: white !default;
+    $base-spacing: 1.5em !default;
+    $base-accent-color: #477DCA !default;
+    $base-link-color: $base-accent-color !default;
+    $dark-gray: #333 !default;
+    $medium-screen: em(640) !default;
+    //////////////////////////////////////////////////////////////////////////////////
+
+    $tab-link-color: $dark-gray;
+    $tab-border: 1px solid $base-border-color;
+    $tab-active-background: $base-background-color;
+    $tab-inactive-color: $base-background-color;
+    $tab-inactive-hover-color: silver;
+    $tab-mode: $medium-screen;
+
+    @include clearfix;
+    line-height: 1.5;
+    padding: 0;
+    margin: 5px 0;
+    border-bottom: 1px solid $base-border-color;
+
+    li {
+      list-style: none;
+      border-top: $tab-border;
+
+      @include media($tab-mode) {
+        display: inline;
+      }
+
+      a {
+        background-color: $tab-inactive-color;
+        border-top: $tab-border;
+        color: $tab-link-color;
+        display: block;
+        font-weight: 400;
+        padding: ($base-spacing / 2) $gutter;
+        text-decoration: none;
+
+        @include media($tab-mode) {
+          display: inline-block;
+          border-top: 0;
+        }
+
+        &.is-active {
+          border-bottom: 0;
+
+          @include media($tab-mode) {
+            border: $tab-border;
+            border-bottom-color: $tab-active-background;
+            margin-bottom: -1px;
+          }
+        }
+
+        &:hover {
+          color: $base-link-color;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+#secondary-tasks {
+  &.tabs {
+    ///////////////////////////////////////////////////////////////////////////////////
+    $base-border-color: gainsboro !default;
+    $base-border-radius: 3px !default;
+    $base-line-height: 1.5em !default;
+    $base-spacing: 1.5em !default;
+    $base-font-size: .8em !default;
+    $base-background-color: white !default;
+    $action-color: #477DCA !default;
+    $dark-gray: #333 !default;
+    $light-grey: #D4D4D4;
+    $large-screen: em(860) !default;
+    $base-font-color: $dark-gray !default;
+    //////////////////////////////////////////////////////////////////////////////////
+
+    @include clearfix;
+    line-height: 1.5;
+    padding: 0;
+    margin: 5px 0;
+
+    li {
+      list-style: none;
+      float: left;
+      border-right: 1px solid $light-grey;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      a {
+        cursor: pointer;
+        display: inline-block;
+        font-size: $base-font-size;
+        font-weight: normal;
+        line-height: 1;
+        padding: 0.75em 1em;
+        width: 100%;
+
+        &.is-active {
+
+        }
+
+        &:focus,
+        &:hover {
+
+        }
+      }
+    }
+  }
+}
