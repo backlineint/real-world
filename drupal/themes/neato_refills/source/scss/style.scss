@@ -31,6 +31,7 @@
 @import "common/messages";
 @import "common/tables";
 @import "common/tasks";
+@import "common/drupal"; // basically shame.scss...
 
 // Import your components here.
 @import "components/breadcrumb";
@@ -39,4 +40,5 @@
 @import "components/footer";
 
 @import "../_patterns/01-molecules/card/card";
+@import "../_patterns/01-molecules/flashes/flashes";
 @import "../_patterns/02-organisms/cards/cards";

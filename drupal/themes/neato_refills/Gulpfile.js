@@ -9,6 +9,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var fs = require("fs");
 var config = require("./example.config");
+//var $    = require('gulp-load-plugins')();
+var exec = require('child_process').exec;
 
 /**
  * If config.js exists, load that config for overriding certain values below.
@@ -116,6 +118,15 @@ gulp.task('browser-sync', function() {
   });
 });
 
+// Generates pattern library.
+gulp.task('patternlab', function (cb) {
+  exec('php pattern-lab/core/console --generate', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+});
+
 /**
  * Defines the watcher task.
  */
@@ -130,6 +141,12 @@ gulp.task('watch', function() {
   if (!config.twig.useCache) {
     gulp.watch(['templates/**/*.html.twig'], ['drush:cr']);
   }
+});
+
+// Patterns only - watch for changes in patterns, compile css and build pattern library
+gulp.task('patterns-only', ['sass', 'patternlab'], function() {
+  gulp.watch(['source/scss/**/*.scss'], ['sass', 'patternlab']);
+  gulp.watch(['source/_patterns/**/*.*'], ['sass', 'patternlab']);
 });
 
 gulp.task('default', ['watch']);

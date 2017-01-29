@@ -1,0 +1,12 @@
+// _drupal.scss - Drupal specifc styles live here. Most should be temporary and moved elsewhere
+
+header {
+  .block-system-branding-block {
+    display: block;
+    float: left;
+  }
+  nav {
+    display: block;
+    float: right;
+  }
+}
