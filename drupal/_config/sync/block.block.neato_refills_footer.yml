@@ -1,6 +1,6 @@
 uuid: 27d1c479-d1db-46b0-9131-23eb4bd99c55
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.footer
@@ -12,8 +12,8 @@ _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
 id: neato_refills_footer
 theme: neato_refills
-region: header
-weight: 0
+region: '-1'
+weight: -3
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

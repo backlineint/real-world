@@ -9,7 +9,7 @@ _core:
 id: neato_refills_page_title
 theme: neato_refills
 region: content
-weight: -7
+weight: -3
 provider: null
 plugin: page_title_block
 settings:
