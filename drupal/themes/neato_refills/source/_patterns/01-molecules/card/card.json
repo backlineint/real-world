@@ -1,6 +1,6 @@
 {
   "header": "A Card",
-  "img_src": "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png",
+  "img_src": "http://placeimg.com/640/480/people",
   "img_alt": "Card Image",
   "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
 }
