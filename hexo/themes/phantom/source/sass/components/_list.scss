@@ -164,6 +164,16 @@
 		}
 	}
 
+	// Fixes for nested uls
+	ul > li > ul > li:last-of-type {
+		margin-bottom: 0;
+	}
+
+	ul > li:last-of-type {
+		margin: 0 0 _size(element-margin) 0;
+	}
+	// End fixes for nested uls
+
 	dl {
 		margin: 0 0 _size(element-margin) 0;
 
