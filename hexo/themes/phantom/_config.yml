@@ -6,7 +6,7 @@ menu:
   Abstract: /abstract
 
 # Logo Image Source
-logo_src: /images/logo.svg
+logo_src: /real-world/images/logo.svg
 
 # Theme Main Subtitle
 subtitle_main: Find out what happens when component based theming in Drupal 8 stops being polite... and starts getting real.
