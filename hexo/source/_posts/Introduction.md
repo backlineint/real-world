@@ -7,6 +7,8 @@ cover_detail: /assets/new_york_detail.jpg
 tags:
 ---
 
+Change
+
 ## Component Based Design Systems Aren't New To Drupal
 
 While it is experiencing a continued surge in popularity in the Drupal community, component based design systems are nothing new.  Prior to Drupal 8 developers were building intelligently re-usable templates and using component friendly modules like [Display Suite](https://www.drupal.org/project/ds), [Views](https://www.drupal.org/project/views), [Panels](https://www.drupal.org/project/panels), [Paragraphs](https://www.drupal.org/project/paragraphs) and more to help implement their design systems.
