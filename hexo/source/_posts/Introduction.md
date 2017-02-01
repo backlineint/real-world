@@ -24,8 +24,3 @@ Prior to Twig, using Drupal with a pattern library would typically require some 
 ## So now what?
 
 Following New Orleans I'm not alone in taking these methods beyond proof of concept and applying them to larger projects. However, what I haven't seen enough of is the sharing of the challenges that come with taking this component based theming approach beyond proof of concept. This site aims to document these challenges through a series of examples. Hopefully this can save a few headaches and also inform the discussion about the future of component based theming in Drupal 8. First up, let's take a look at the basics of this process. 
-
-## Notes
-* Alt titles: Introduction. Orgins.
-* Do I need the hero?
-* Should I go with city photos or cast photos?

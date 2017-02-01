@@ -14,14 +14,3 @@ tags:
 * Fields and blocks are components using paragraphs.
 * Paragraphs use UI Patterns to define and map components.
 
-Notes:
-* All plays nicely with panels IPE.
-
-Dos:
-* Keep things at the component level - field are paragraphs, not individual standalone fields.
-
-Editing Challenges:
-* Paragraphs on the node move as a single block even when containing mutliple paragraphs.
-* Paragraphs on the node must be edited on the node edit form, not the IPE.
-* Blocks (even with paragraphs) can be nicely edited using quickedit.
-
