@@ -73,9 +73,9 @@
 
 {% include "@molecules/card/card.twig"
   with {
-    "header": "A Card",
-    "img_src": "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png",
-    "img_alt": "Card Image",
-    "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+    "img_src": file_url(node.field_image.entity.fileuri),
+    "img_alt": content.field_image.0['#item'].alt,
+    "header": label,
+    "copy": content.body
   }
 %}
