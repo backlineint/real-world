@@ -73,9 +73,9 @@
 
 {% include "@molecules/card/card.twig"
   with {
-    "img_src": file_url(node.field_image.entity.fileuri),
-    "img_alt": content.field_image.0['#item'].alt,
-    "header": label,
-    "copy": content.body
+    "img_src": file_url(content.field_image|field_target_entity.uri.value),
+    "img_alt": content.field_image|field_raw('alt'),
+    "header": label|field_value,
+    "copy": content.body|field_value
   }
 %}
