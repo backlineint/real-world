@@ -3,6 +3,7 @@ title: 2. The Basics
 subtitle: Season 2 - Los Angeles
 date: 2017-01-29 12:30:33
 cover_index: /real-world/assets/los_angeles_index.jpg
+cover_detail: /real-world/assets/los_angeles_detail.jpg
 tags:
 ---
 

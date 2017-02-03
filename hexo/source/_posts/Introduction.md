@@ -3,7 +3,7 @@ title: 1. How Did We Get Here?
 subtitle: Season 1 - New York
 date: 2017-01-31 12:30:33
 cover_index: /real-world/assets/new_york_index.jpg
-cover_detail: /real-world//assets/new_york_detail.jpg
+cover_detail: /real-world/assets/new_york_detail.jpg
 tags:
 ---
 
