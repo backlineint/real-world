@@ -76,7 +76,6 @@ You can see the full contents of this file in [this project's repository](https:
   }
 
 }
-
 {% endcodeblock %}
 
 This provides a nice structure that gives us the BEM classes expected in the markup for card.twig.
@@ -90,12 +89,79 @@ After defining some data to be used for our component, we'll see the following r
 
 ## Mapping The Component to Drupal
 
-Depending on the complexity of your component, I often find it helpful to start by exposing the prototype component in Drupal first.
+Now that we have a card component in Pattern Lab, let's render it in Drupal. Sticking to the somewhat tangential theme we have going, we're going to be rendering Cast member profiles from the Real World reality show as cards to start. We've created a basic 'Cast' content type that currently only has the basics to render a card - title, body, and image fields.
 
-Now that we see the same component from Pattern Lab in Drupal, let's map the actual data into the component.
+We've also created a new 'Card' Display Mode. This provides an easy hook into rendering various content as cards.  We can enable this display mode for all of the content types we want to render as cards, configure which fields to display, and we also get a nice specific template suggestion - in this case node--cast--card.html.twig
+
+### Rendering The Prototype
+
+Depending on the complexity of your component, I often find it helpful to start by exposing the prototype component in Drupal first.  In your theme's templates directory, we'll the new node--cast--card.html.twig  This is a presenter template - it only serves to reference the component template from our pattern library and translate Drupal's data into the format that the pattern library component is expecting. Let's take a look at the Twig markup:
+
+{% gist 820bbc02154908ce5f191e2c704c0396 node--cast--card.html.twig.prototype %}
+
+Looking at the component parts, we first have the include statement:
+
+    include "@molecules/card/card.twig"
+    
+[Twig's include statement](http://twig.sensiolabs.org/doc/2.x/tags/include.html) finds our card component template and returns the rendered content of that file to our current presenter template.  The @molecules portion of that path is a Twig namespace made possible by the Components module.  By default, templates can only live in the themes templates subdirectory, but these custom namespaces allow us to make Drupal aware of other paths. The are defined in your theme's info.yaml file. In our theme we've created namespaces for each of the main Patterns directories in Pattern Lab.
+
+{% codeblock lang:yaml Twig namespaces as defined in neato_refills.yaml %}
+# This section is used by the contrib module, Component Libraries. It allows you
+# to reference .twig files in your sass/ directory by using the Twig namespace:
+# @components
+component-libraries:
+  atoms:
+    paths:
+      - source/_patterns/00-atoms
+  molecules:
+    paths:
+      - source/_patterns/01-molecules
+  organisms:
+    paths:
+      - source/_patterns/02-organisms
+  templates:
+    paths:
+      - source/_patterns/03-templates
+  pages:
+    paths:
+      - source/_patterns/04-pages
+{% endcodeblock %}
+
+Getting back to our node--card--cast.html.twig template, our include statement also uses the with keyword. With allows us to explicitly define and map variables to our card component template.  
+
+      with {
+        "header": "A Card",
+        "img_src": "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png",
+        "img_alt": "Card Image",
+        "copy": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+      }
+
+Since we're just looking to see the prototype component in Drupal, this is literally just the same data in the same format from the component's json file in pattern lab.
+
+{% gist 820bbc02154908ce5f191e2c704c0396 card.json %}
+
+Now, if we view a cast node in the card display mode, we'll see the same prototype component from Pattern Lab.
+
+![](map_prototype.png)
+
+### Rendering Drupal's Data
+
+Now that we see the same component from Pattern Lab in Drupal, let's map the actual node data into the component.  Here we are just selecting from the variables available to the template, replacing that with the placeholder data from the template.  The end result is:
+
+{% gist 820bbc02154908ce5f191e2c704c0396 node--cast--card.html.twig %}
+
+Finding the right variables can be tricky, which is why I think it is useful to start with placeholders from the prototype and swap out values piecemeal. Debugging will help you here - we'll review some of the options later on.
+
+The end result, we see our node data rendered in Drupal, using the card component from the Pattern Library.
+
+![](map_drupal.png)
 
 ## Recapping the Workflow
 
-* Build it in pattern lab
-* Get the pattern lab version in Drupal
-* Map the Drupal version
+As outlined above, when creating a new component I'll:
+
+* Build the component as desired in Pattern Lab first.
+* Stand the prototype component up in Drupal.
+* Map the data objects one by one to the real thing in Drupal.
+
+As you might imagine, this data mapping can get substantially more complicated than what we saw in this simple example. Next we'll look at some options to simplify that process.
