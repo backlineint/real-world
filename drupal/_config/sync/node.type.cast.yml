@@ -1,0 +1,18 @@
+uuid: 93553a4e-a8ab-44da-86bf-fe5e01ac77c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Cast
+type: cast
+description: 'A real world cast member'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
