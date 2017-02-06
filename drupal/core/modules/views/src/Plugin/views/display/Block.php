@@ -23,7 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *   admin = @Translation("Block")
  * )
  *
- * @see \Drupal\views\Plugin\block\block\ViewsBlock
+ * @see \Drupal\views\Plugin\Block\ViewsBlock
  * @see \Drupal\views\Plugin\Derivative\ViewsBlock
  */
 class Block extends DisplayPluginBase {
@@ -346,11 +346,11 @@ class Block extends DisplayPluginBase {
    * Block views use exposed widgets only if AJAX is set.
    */
   public function usesExposed() {
-      if ($this->ajaxEnabled()) {
-        return parent::usesExposed();
-      }
-      return FALSE;
+    if ($this->ajaxEnabled()) {
+      return parent::usesExposed();
     }
+    return FALSE;
+  }
 
   /**
    * {@inheritdoc}

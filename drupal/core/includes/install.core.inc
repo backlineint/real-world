@@ -20,6 +20,7 @@ use Drupal\Core\Logger\LoggerChannelFactory;
 use Drupal\Core\Site\Settings;
 use Drupal\Core\StringTranslation\Translator\FileTranslation;
 use Drupal\Core\StackMiddleware\ReverseProxyMiddleware;
+use Drupal\Core\StreamWrapper\PublicStream;
 use Drupal\Core\Extension\ExtensionDiscovery;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Url;
@@ -369,7 +370,9 @@ function install_begin_request($class_loader, &$install_state) {
     $install_state['config_verified'] = FALSE;
   }
   $install_state['database_verified'] = install_verify_database_settings($site_path);
-  $install_state['settings_verified'] = $install_state['config_verified'] && $install_state['database_verified'];
+  // A valid settings.php has database settings and a hash_salt value. Other
+  // settings like config_directories will be checked by system_requirements().
+  $install_state['settings_verified'] = $install_state['database_verified'] && (bool) Settings::get('hash_salt', FALSE);
 
   // Install factory tables only after checking the database.
   if ($install_state['database_verified'] && $install_state['database_ready']) {
@@ -1034,6 +1037,21 @@ function install_base_system(&$install_state) {
   // Install system.module.
   drupal_install_system($install_state);
 
+  // Prevent the installer from using the system temporary directory after the
+  // system module has been installed.
+  if (drupal_valid_test_ua()) {
+    // While the temporary directory could be preset/enforced in settings.php
+    // like the public files directory, some tests expect it to be configurable
+    // in the UI. If declared in settings.php, they would no longer be
+    // configurable. The temporary directory needs to match what is set in each
+    // test types ::prepareEnvironment() step.
+    $temporary_directory = dirname(PublicStream::basePath()) . '/temp';
+    file_prepare_directory($temporary_directory, FILE_MODIFY_PERMISSIONS | FILE_CREATE_DIRECTORY);
+    \Drupal::configFactory()->getEditable('system.file')
+      ->set('path.temporary', $temporary_directory)
+      ->save();
+  }
+
   // Call file_ensure_htaccess() to ensure that all of Drupal's standard
   // directories (e.g., the public files directory and config directory) have
   // appropriate .htaccess files. These directories will have already been
@@ -1578,7 +1596,7 @@ function install_download_additional_translations_operations(&$install_state) {
   \Drupal::moduleHandler()->loadInclude('locale', 'bulk.inc');
 
   $langcode = $install_state['parameters']['langcode'];
-  if (!($language = entity_load('configurable_language', $langcode))) {
+  if (!($language = ConfigurableLanguage::load($langcode))) {
     // Create the language if not already shipped with a profile.
     $language = ConfigurableLanguage::createFromLangcode($langcode);
   }

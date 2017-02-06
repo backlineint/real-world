@@ -10,6 +10,7 @@ use Drupal\Core\Language\Language;
 use Drupal\Core\Language\LanguageInterface;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\filter\Entity\FilterFormat;
 use Drupal\language\Entity\ConfigurableLanguage;
 use Drupal\simpletest\WebTestBase;
 
@@ -77,11 +78,11 @@ class ConfigTranslationUiTest extends WebTestBase {
     ];
 
     /** @var \Drupal\filter\FilterFormatInterface $filter_test_format */
-    $filter_test_format = entity_load('filter_format', 'filter_test');
+    $filter_test_format = FilterFormat::load('filter_test');
     /** @var \Drupal\filter\FilterFormatInterface $filtered_html_format */
-    $filtered_html_format = entity_load('filter_format', 'filtered_html');
+    $filtered_html_format = FilterFormat::load('filtered_html');
     /** @var \Drupal\filter\FilterFormatInterface $full_html_format */
-    $full_html_format = entity_load('filter_format', 'full_html');
+    $full_html_format = FilterFormat::load('full_html');
 
     $admin_permissions = array_merge(
       $translator_permissions,
@@ -647,7 +648,7 @@ class ConfigTranslationUiTest extends WebTestBase {
 
     foreach ($languages as $langcode => $data) {
       // Import a .po file to add a new language with a given number of plural forms
-      $name = tempnam('temporary://', $langcode . '_') . '.po';
+      $name = \Drupal::service('file_system')->tempnam('temporary://', $langcode . '_') . '.po';
       file_put_contents($name, $this->getPoFile($data['plurals']));
       $this->drupalPostForm('admin/config/regional/translate/import', array(
         'langcode' => $langcode,
@@ -683,7 +684,7 @@ class ConfigTranslationUiTest extends WebTestBase {
 
     // First import a .po file with multiple plural forms.
     // This will also automatically add the 'sl' language.
-    $name = tempnam('temporary://', "sl_") . '.po';
+    $name = \Drupal::service('file_system')->tempnam('temporary://', "sl_") . '.po';
     file_put_contents($name, $this->getPoFile(4));
     $this->drupalPostForm('admin/config/regional/translate/import', array(
       'langcode' => 'sl',
