@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * @file
+ * Contains module file.
+ */
+
+use Drupal\ui_patterns\Element\PatternContext;
+
+/**
+ * Implements hook_layout_alter().
+ */
+function ui_patterns_layouts_layout_alter(&$definitions) {
+
+  $pattern_definitions = \Drupal::service('plugin.manager.ui_patterns')->getDefinitions();
+  foreach ($pattern_definitions as $pattern_definition) {
+    $definition = [
+      'label' => $pattern_definition['label'],
+      'theme' => $pattern_definition['theme hook'],
+      'provider' => $pattern_definition['provider'],
+      'category' => 'Patterns',
+      'class' => '\Drupal\ui_patterns_layouts\Plugin\Layout\PatternLayout',
+      'pattern' => $pattern_definition['id'],
+      'path' => '',
+      'template_path' => NULL,
+    ];
+    foreach ($pattern_definition['fields'] as $field_name => $field) {
+      $definition['regions'][$field_name]['label'] = $field['label'];
+      $definition['region_names'][$field_name] = $field['label'];
+    }
+    $definitions['pattern_' . $pattern_definition['id']] = $definition;
+  }
+}
+
+/**
+ * Implements hook_ui_patterns_suggestions_alter().
+ */
+function ui_patterns_layouts_ui_patterns_suggestions_alter(array &$suggestions, array $variables, PatternContext $context) {
+  if ($context->isOfType('layout')) {
+    $hook = $variables['theme_hook_original'];
+    $group_name = $context->getProperty('group_name');
+    $entity_type = $context->getProperty('entity_type');
+    $bundle = $context->getProperty('bundle');
+    $view_mode = $context->getProperty('view_mode');
+
+    $suggestions[] = $hook . '__field_group__' . $group_name;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type . '__' . $bundle;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type . '__' . $view_mode;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type . '__' . $bundle . '__' . $view_mode;
+  }
+}

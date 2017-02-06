@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * UI Pattern meta information.
+ */
+#}
+
+{% if pattern is not empty %}
+
+  {# Pattern name and desciption. #}
+  <h3>{{ pattern.label }}</h3>
+  <p>{{ pattern.description }}</p>
+
+  {# Pattern fields descriptions. #}
+  <table>
+    <thead>
+    <tr>
+      <th>{{ "Field"|t }}</th>
+      <th>{{ "Label"|t }}</th>
+      <th>{{ "Type"|t }}</th>
+      <th>{{ "Description"|t }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for name, field in pattern.fields %}
+      <tr>
+        <td><code>{{ name }}</code></td>
+        <td>{{ field.label }}</td>
+        <td><code>{{ field.type }}</code></td>
+        <td>{{ field.description }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endif %}

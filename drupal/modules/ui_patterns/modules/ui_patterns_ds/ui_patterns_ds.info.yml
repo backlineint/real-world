@@ -1,0 +1,14 @@
+name: UI Patterns Display Suite
+type: module
+description: Use patterns as Display Suite field templates. It also provides Display Suite pattern sources.
+# core: 8.x
+package: User interface
+dependencies:
+  - ds
+  - ui_patterns
+
+# Information added by Drupal.org packaging script on 2017-01-28
+version: '8.x-1.0-beta4'
+core: '8.x'
+project: 'ui_patterns'
+datestamp: 1485630186

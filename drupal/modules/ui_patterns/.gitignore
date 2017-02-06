@@ -1,0 +1,5 @@
+vendor
+behat.yml
+tests/drupal
+composer.lock
+docs/_build

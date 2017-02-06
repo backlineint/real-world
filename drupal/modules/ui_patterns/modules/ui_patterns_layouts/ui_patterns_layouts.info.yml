@@ -1,0 +1,14 @@
+name: UI Patterns Layouts
+type: module
+description: Use patterns as layout plugins.
+# core: 8.x
+package: User interface
+dependencies:
+  - layout_plugin
+  - ui_patterns
+
+# Information added by Drupal.org packaging script on 2017-01-28
+version: '8.x-1.0-beta4'
+core: '8.x'
+project: 'ui_patterns'
+datestamp: 1485630186

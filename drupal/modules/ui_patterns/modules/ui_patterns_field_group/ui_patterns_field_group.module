@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains module file.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\ui_patterns\Element\PatternContext;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ui_patterns_field_group_form_entity_view_display_edit_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  array_unshift($form['actions']['submit']['#submit'], 'ui_patterns_field_group_field_group_field_overview_submit');
+}
+
+/**
+ * Form submit callback to fix the field_group configuration.
+ *
+ * @param array $form
+ *   The form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ */
+function ui_patterns_field_group_field_group_field_overview_submit($form, FormStateInterface $form_state) {
+
+  $field_group_form_state = $form_state->get('field_group');
+  if (!empty($field_group_form_state)) {
+    foreach ($form['#fieldgroups'] as $group_name) {
+      // Only save updated groups.
+      if (!isset($field_group_form_state[$group_name])) {
+        continue;
+      }
+
+      if (isset($field_group_form_state[$group_name]->format_settings)) {
+        // Call static processFormStateValues if the plugin implements it.
+        $plugin_definition = \Drupal::service('plugin.manager.field_group.formatters')->getDefinition($field_group_form_state[$group_name]->format_type, FALSE);
+        if (method_exists($plugin_definition['class'], 'processFormStateValues')) {
+          call_user_func_array([$plugin_definition['class'], 'processFormStateValues'], [&$field_group_form_state[$group_name]->format_settings]);
+        }
+      }
+    }
+
+    // Set the form_state so that the submit hook of field_groups can work.
+    $form_state->set('field_group', $field_group_form_state);
+  }
+}
+
+/**
+ * Implements hook_ui_patterns_suggestions_alter().
+ */
+function ui_patterns_field_group_ui_patterns_suggestions_alter(array &$suggestions, array $variables, PatternContext $context) {
+  if ($context->isOfType('field_group')) {
+    $hook = $variables['theme_hook_original'];
+    $group_name = $context->getProperty('group_name');
+    $entity_type = $context->getProperty('entity_type');
+    $bundle = $context->getProperty('bundle');
+    $view_mode = $context->getProperty('view_mode');
+
+    $suggestions[] = $hook . '__field_group__' . $group_name;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type . '__' . $bundle;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type . '__' . $view_mode;
+    $suggestions[] = $hook . '__field_group__' . $group_name . '__' . $entity_type . '__' . $bundle . '__' . $view_mode;
+  }
+}

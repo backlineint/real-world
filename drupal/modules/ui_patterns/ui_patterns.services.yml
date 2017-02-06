@@ -1,0 +1,13 @@
+services:
+  ui_patterns.validation:
+    class: Drupal\ui_patterns\UiPatternsValidation
+  plugin.manager.ui_patterns:
+    class: Drupal\ui_patterns\UiPatternsManager
+    arguments: ['@app.root', '@module_handler', '@theme_handler', '@twig.loader', '@ui_patterns.validation', '@cache.discovery']
+  plugin.manager.ui_patterns_source:
+    class: Drupal\ui_patterns\Plugin\UiPatternsSourceManager
+    parent: default_plugin_manager
+  ui_patterns.twig.extension:
+    class: Drupal\ui_patterns\Template\TwigExtension
+    tags:
+      - { name: twig.extension }

@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * UI Pattern library page template, override this in your theme.
+ */
+#}
+
+{% if patterns is not empty %}
+  <h2>{{ "Available patterns"|t }}</h2>
+
+  {# List of available patterns with anchor links. #}
+  <ul>
+    {% for pattern_name, pattern in patterns %}
+      <li>
+        <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+
+  {% for pattern_name, pattern in patterns %}
+
+    {# Pattern name and desciption. #}
+    <a name="{{ pattern_name }}"></a>
+    {{ pattern.meta }}
+
+    {# Rendered pattern preview. #}
+    <fieldset>
+      <legend>{{ "Preview"|t }}</legend>
+      <div>
+        {{ pattern.rendered }}
+      </div>
+    </fieldset>
+
+    {# Link to standalone pattern preview page.#}
+    <p>
+      <a href="{{ url('ui_patterns.patterns.single', {'name': pattern_name}) }}">
+        {% trans %}View {{ pattern.label }} as stand-alone{% endtrans %}
+      </a>
+    </p>
+
+    <hr>
+  {% endfor %}
+{% endif %}
+
+
+
