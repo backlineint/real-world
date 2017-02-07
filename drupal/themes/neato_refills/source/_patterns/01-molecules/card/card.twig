@@ -1,13 +1,15 @@
 <div class="card">
   <div class="card__image">
-    <img src="{{ img_src }}" alt="{{ img_alt }}">
+    {% if pattern_lab %}
+      {{ image|raw }}
+    {% else %}
+      {{ image }}
+    {% endif %}
   </div>
   <div class="card__header">
     {{ header }}
   </div>
   <div class="card__copy">
-    {% block copy %}
-      <p>{{ copy }}</p>
-    {% endblock %}
+    {{ copy }}
   </div>
 </div>

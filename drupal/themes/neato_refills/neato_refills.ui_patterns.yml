@@ -1,0 +1,19 @@
+card:
+  label: Card
+  description: Display content in a card format
+  fields:
+    image:
+      type: text
+      label: Image
+      description: Image field.
+      preview: <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt="Card Image">
+    header:
+      type: text
+      label: Header
+      description: Header text.
+      preview: A Card
+    copy:
+      type: text
+      label: Copy
+      description: Body copy content
+      preview: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
