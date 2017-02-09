@@ -33,7 +33,7 @@ Notes:
 * In a the future / in a perfect world, Pattern Lab would be an external submodule that could completely live on its own.
 * Not using a Drupal Pattern Lab Starter Kit Theme
 
-## Section 3 - Streamlining the Process
+## Section 3 - Taking the pain out of data mapping
 
 * I went way overboard in mapping in Twig Templates - don't be like me.
 * Maybe this needs to be broken out into different sections - streamlining the process / mapping just the date you need...
@@ -41,7 +41,32 @@ Notes:
 * Something about dev team challenges and preprocessing possibly.
 * Twig Tweak: https://www.drupal.org/project/twig_tweak
 
-## Section 4
+Todo - try to show the before and after of using Twig field value for body and copy sections.
+
+Todo - show concrete examples of complicated twig logic either converted to preprocesisng, or to tiwg macros or filters.
+
+Section Outline:
+
+* Smart Re-use
+    * Extends, Embed, and Twig Blocks.
+    * Style Modifiers
+* Mapping just the data you need:
+    * Twig Field Value - get partial data from render arrays.
+        * Values
+        * Properties
+        * Fields on references entities
+        * Caching related concerns.
+    * Custom Twig Plugins
+    * Preprocess functions
+    * UI Patterns Module - manage mapping in UI.
+        * Loops config back into the UI. 
+* Debugging
+* Handling Pattern Lab Only Things
+    * Different markup / Filters
+    * Internal Patterns
+* Gulp tasks for different jobs - pattern lab work, vs Drupal, vs build only vs all.
+
+## Section 4 - streamlining the Process
 
 ## Section 5 - Component Friendly Content Editing
 
