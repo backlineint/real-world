@@ -62,3 +62,8 @@
 			}
 		}
 	}
+
+	// Prevent images from overflowing (adjusted from source)
+	img {
+		max-width: 100%;
+	}

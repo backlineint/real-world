@@ -72,15 +72,48 @@ While some amount of logic in preprocessing or Twig is likely inescapable, anoth
 
 ## UI Patterns module
 
-The UI Patterns Module helps get Drupal back in the loop on component definition and data mapping.  It does that by:
+The [UI Patterns Module](https://www.drupal.org/project/ui_patterns) helps get Drupal back in the loop on component definition and data mapping.  It does that by:
 
 * Allowing UI Patterns to be defined as Drupal Plugins
 * Providing ways to configure data mappings in the admin UI
 * Allowing defined patterns to be used with component friendly modules like views, field group, panels, display suite, and paragraphs (requires display suite in most cases)
-* And exposing an pptional Pattern Library page in Drupal
+* And exposing an optional Pattern Library page in Drupal
 
 Going back once again to our card example, let's see how we can map data to our pattern library card component using the UI Patterns module.
 
 ### UI Patterns Card Mapping
 
+Patterns can be exposed to a number of supporting modules, but in this case we'll be using Display Suite so that our pattern can be exposed to all available content types.  As a result, we'll need to enable the following UI Patterns related modules:
+
+* UI Patterns
+* UI Patterns Layouts (which requires the Display Suite and Layout Plugin modules.)
+
+With the necessary modules enabled, the next step is defining your patterns in a theme_name.ui_patterns.yml file. These patterns definitions can be split into multiple files in subfolders, but for this example we'll use a single yml file in the root of our theme.
+ 
+ {% gist ae756967651e430e238a8351debb0cc4 neato_refills.ui_patterns.yml %}
+ 
+ All we're doing here is making Drupal aware of the variables that we've already defined in our card component. The desctiption and preview are optional, but if included will be used in UI Patterns pattern library page within Drupal.
+ 
+ We also need to define the template that this pattern will use to render the component. UI Patterns supports a 'use' property in ui_pattern.yml that is intended to allow you to directly reference a twig template in your pattern library, but there are currently some incompatibility issues between Drupal/UI Patterns and Pattern Lab ([see this issue](https://github.com/nuvoleweb/ui_patterns/issues/49).)  So instead, we'll just make use of the default suggestion for this pattern, which would be pattern-card.html.twig. Since UI Patterns will handle all of the mapping, this template literally does nothing but reference the desired component in our pattern library:
+ 
+  {% gist ae756967651e430e238a8351debb0cc4 pattern-card.html.twig %}
+  
+That's right - zero variable mapping in the presenter template. Now let's take a look at how these mappings can be configured in the admin UI.
+
 ### UI Patterns Configuration
+
+In the manage display options for the Cast content type we'll select the Card display mode, and then under the layout options we'll select the card pattern.
+
+![](ui_patterns_layout.png)
+
+After saving, you'll also see a pattern settings tab where you can specify if your data should be wrapped in field templates or not. We'll select the 'only content' option in this case to keep things clean and minimal.
+
+![](ui_patterns_settings.png)
+
+Now for each field (the label column in the UI) you can specify a region which maps to the variable in your pattern.  
+
+![](ui_patterns_fields.png)
+
+After saving this configuration, you'll now see cards rendered using your component template - no mapping in Twig templates required.  
+
+
