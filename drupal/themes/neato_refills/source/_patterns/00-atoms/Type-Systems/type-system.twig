@@ -1,0 +1,7 @@
+<article class="type-system--{{ style_modifier }}">
+  {% if pattern_lab %}
+    {% include "_demo-copy.twig" with {} %}
+  {% else %}
+    {{ body }}
+  {% endif %}
+</article>

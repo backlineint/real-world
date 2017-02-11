@@ -39,6 +39,15 @@
 @import "components/flexbox";
 @import "components/footer";
 
+// Atoms
+@import "../_patterns/00-atoms/Type-Systems/geometric";
+@import "../_patterns/00-atoms/Type-Systems/rounded";
+@import "../_patterns/00-atoms/Type-Systems/sans";
+@import "../_patterns/00-atoms/Type-Systems/serif";
+@import "../_patterns/00-atoms/Type-Systems/slab";
+@import "../_patterns/00-atoms/Type-Systems/traditional";
+// Molecules
 @import "../_patterns/01-molecules/card/card";
 @import "../_patterns/01-molecules/flashes/flashes";
+// Organisms
 @import "../_patterns/02-organisms/cards/cards";
