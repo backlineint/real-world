@@ -3,14 +3,17 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_article
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.large
     - node.type.article
   module:
     - comment
+    - entity_reference_revisions
     - image
     - text
     - user
@@ -33,6 +36,15 @@ content:
     weight: 20
     settings:
       pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+  field_article:
+    type: entity_reference_revisions_entity_view
+    weight: 101
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
   field_image:
     type: image

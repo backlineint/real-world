@@ -1,0 +1,25 @@
+uuid: d58e73a7-4c0a-4604-a7b2-f459ba1bbb1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_geometric.field_article
+    - paragraphs.paragraphs_type.type_geometric
+  module:
+    - text
+id: paragraph.type_geometric.default
+targetEntityType: paragraph
+bundle: type_geometric
+mode: default
+content:
+  field_article:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,21 @@
+uuid: 8c83f447-ad20-49e3-9a48-8a26008806a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article
+    - paragraphs.paragraphs_type.type_geometric
+  module:
+    - text
+id: paragraph.type_geometric.field_article
+field_name: field_article
+entity_type: paragraph
+bundle: type_geometric
+label: Article
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

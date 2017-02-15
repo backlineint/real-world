@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.comment
+    - field.field.node.article.field_article
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
     - image.style.thumbnail
@@ -12,6 +13,7 @@ dependencies:
   module:
     - comment
     - image
+    - paragraphs
     - path
     - text
 _core:
@@ -38,6 +40,16 @@ content:
     type: datetime_timestamp
     weight: 10
     settings: {  }
+    third_party_settings: {  }
+  field_article:
+    type: entity_reference_paragraphs
+    weight: 31
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
     third_party_settings: {  }
   field_image:
     type: image_image

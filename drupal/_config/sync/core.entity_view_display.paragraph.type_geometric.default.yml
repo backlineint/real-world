@@ -1,0 +1,38 @@
+uuid: 1136db34-a984-4890-9e95-72c8c4675cfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_geometric.field_article
+    - paragraphs.paragraphs_type.type_geometric
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_type_system_geometric
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+    regions:
+      body:
+        - field_article
+id: paragraph.type_geometric.default
+targetEntityType: paragraph
+bundle: type_geometric
+mode: default
+content:
+  field_article:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

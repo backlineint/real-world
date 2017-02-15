@@ -1,0 +1,6 @@
+uuid: bfd1c3e6-cf93-4a25-ab4e-20311fb30686
+langcode: en
+status: true
+dependencies: {  }
+id: type_geometric
+label: 'Type Geometric'
