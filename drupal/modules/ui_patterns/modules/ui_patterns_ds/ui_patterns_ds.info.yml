@@ -7,8 +7,8 @@ dependencies:
   - ds
   - ui_patterns
 
-# Information added by Drupal.org packaging script on 2017-01-28
-version: '8.x-1.0-beta4'
+# Information added by Drupal.org packaging script on 2017-02-08
+version: '8.x-1.0-beta5'
 core: '8.x'
 project: 'ui_patterns'
-datestamp: 1485630186
+datestamp: 1486535586

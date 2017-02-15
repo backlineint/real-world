@@ -95,6 +95,24 @@ class UiPatternsManagerTest extends AbstractUiPatternsTest {
   }
 
   /**
+   * Test hookLibraryInfoBuild.
+   *
+   * @covers ::hookLibraryInfoBuild
+   */
+  public function testHookLibraryInfoBuild() {
+    $items = Yaml::decode(file_get_contents(dirname(__FILE__) . '/fixtures/libraries.yml'));
+
+    foreach ($items as $item) {
+      $manager = $this->createPartialMock(UiPatternsManager::class, ['getDefinitions']);
+      $manager->method('getDefinitions')->willReturn([$item['actual']]);
+
+      /** @var \Drupal\ui_patterns\UiPatternsManager $manager */
+      $libraries = $manager->hookLibraryInfoBuild();
+      assert($libraries, equals($item['expected']));
+    }
+  }
+
+  /**
    * Pattern definitions data provider.
    *
    * @return array
@@ -103,8 +121,8 @@ class UiPatternsManagerTest extends AbstractUiPatternsTest {
   public function definitionsProvider() {
     $data = [];
     $files = [
-      $this->getExtensionsPath('ui_patterns_test') . '/ui_patterns_test.ui_patterns.yml',
-      $this->getExtensionsPath('ui_patterns_test_theme') . '/ui_patterns_test_theme.ui_patterns.yml',
+      $this->getExtensionsPath('theme') . '/theme.ui_patterns.yml',
+      $this->getExtensionsPath('module') . '/module.ui_patterns.yml',
     ];
 
     foreach ($files as $file) {

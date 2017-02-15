@@ -25,6 +25,11 @@ class UiPatternsManager extends DefaultPluginManager implements UiPatternsManage
   const TWIG_EXTENSION = '.html.twig';
 
   /**
+   * Pattern prefix.
+   */
+  const PATTERN_PREFIX = 'pattern_';
+
+  /**
    * The app root.
    *
    * @var string
@@ -64,6 +69,8 @@ class UiPatternsManager extends DefaultPluginManager implements UiPatternsManage
     'fields' => [],
     'libraries' => [],
     'extra' => [],
+    'base path' => '',
+    'use' => '',
   ];
 
   /**
@@ -100,7 +107,7 @@ class UiPatternsManager extends DefaultPluginManager implements UiPatternsManage
 
     $definition['custom theme hook'] = TRUE;
     if (empty($definition['theme hook'])) {
-      $definition['theme hook'] = "pattern_{$plugin_id}";
+      $definition['theme hook'] = self::PATTERN_PREFIX . $plugin_id;
       $definition['custom theme hook'] = FALSE;
     }
 
@@ -170,11 +177,64 @@ class UiPatternsManager extends DefaultPluginManager implements UiPatternsManage
   /**
    * {@inheritdoc}
    */
+  public function hookLibraryInfoBuild() {
+    // @codingStandardsIgnoreStart
+    $libraries = [];
+    foreach ($this->getDefinitions() as $definition) {
+
+      // Get only locally defined libraries.
+      $items = array_filter($definition['libraries'], function ($library) {
+        return is_array($library);
+      });
+
+      // Attach pattern base path to assets.
+      if (!empty($definition['base path'])) {
+        $base_path = str_replace($this->root, '', $definition['base path']);
+        $this->processLibraries($items, $base_path);
+      }
+
+      // Produce final libraries array.
+      $id = $definition['id'];
+      array_walk($items, function ($value) use (&$libraries, $id) {
+        $libraries[$id . '.' . key($value)] = reset($value);
+      });
+    }
+
+    // @codingStandardsIgnoreEnd
+    return $libraries;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isPatternHook($hook) {
     $definitions = array_filter($this->getDefinitions(), function ($definition) use ($hook) {
       return $definition['theme hook'] == $hook;
     });
     return !empty($definitions);
+  }
+
+  /**
+   * Process libraries.
+   *
+   * @param array $libraries
+   *    Libraries array.
+   * @param string $base_path
+   *    Pattern base path.
+   */
+  protected function processLibraries(array &$libraries, $base_path) {
+
+    foreach ($libraries as $name => $values) {
+      $is_asset = stristr($name, '.css') !== FALSE || stristr($name, '.js') !== FALSE;
+      $is_external = isset($values['type']) && $values['type'] == 'external';
+      if ($is_asset && !$is_external) {
+        $libraries[$base_path . DIRECTORY_SEPARATOR . $name] = $values;
+        unset($libraries[$name]);
+      }
+      elseif (!$is_asset) {
+        $this->processLibraries($libraries[$name], $base_path);
+      }
+    }
   }
 
   /**
@@ -226,12 +286,23 @@ class UiPatternsManager extends DefaultPluginManager implements UiPatternsManage
    * @return array
    *    Processed hook definition portion.
    *
+   * @throws \Twig_Error_Loader
+   *    Throws exception if template is not found.
+   *
    * @see UiPatternsManager::hookTheme()
    */
   protected function processUseProperty(array $definition) {
     /** @var \Drupal\Core\Extension\Extension $module */
+    static $processed = [];
+
+    if (isset($processed[$definition['id']])) {
+      throw new \Twig_Error_Loader("Template specified in 'use:'  for pattern {$definition['id']} cannot be found (recursion detected).");
+    }
+
     $return = [];
-    if (isset($definition['use']) && $this->loader->exists($definition['use'])) {
+    if (!empty($definition['use'])) {
+      $processed[$definition['id']] = TRUE;
+
       $template = $definition['use'];
       $parts = explode(DIRECTORY_SEPARATOR, $template);
       $name = array_pop($parts);
