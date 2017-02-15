@@ -1,9 +1,0 @@
-type_system_geometric:
-  label: Type System Geometric
-  description: A article using the geometric type system.
-  fields:
-    body:
-      type: text
-      label: Body
-      description: Body copy content
-      preview: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.

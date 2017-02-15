@@ -7,3 +7,8 @@ global-scripts:
   version: VERSION
   js:
     source/js/scripts.js: {}
+geometric:
+  css:
+    component:
+      //fonts.googleapis.com/css?family=Questrial: { type: external }
+      //fonts.googleapis.com/css?family=Sanchez:400italic,400: { type: external }
