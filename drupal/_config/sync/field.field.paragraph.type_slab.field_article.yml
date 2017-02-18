@@ -1,0 +1,21 @@
+uuid: 7f5a9f95-f075-45cf-949e-020fbc7cddcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article
+    - paragraphs.paragraphs_type.type_slab
+  module:
+    - text
+id: paragraph.type_slab.field_article
+field_name: field_article
+entity_type: paragraph
+bundle: type_slab
+label: Article
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

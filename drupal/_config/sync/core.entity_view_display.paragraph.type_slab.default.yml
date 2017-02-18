@@ -1,0 +1,38 @@
+uuid: e45856c8-63bc-426e-919c-e6502d58d9e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_slab.field_article
+    - paragraphs.paragraphs_type.type_slab
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_type_system_slab
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      body:
+        - field_article
+id: paragraph.type_slab.default
+targetEntityType: paragraph
+bundle: type_slab
+mode: default
+content:
+  field_article:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

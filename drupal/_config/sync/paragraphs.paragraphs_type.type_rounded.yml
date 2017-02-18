@@ -1,0 +1,6 @@
+uuid: f2df5971-df05-4dc1-b1e8-c308d7829831
+langcode: en
+status: true
+dependencies: {  }
+id: type_rounded
+label: 'Type Rounded'

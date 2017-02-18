@@ -5,6 +5,12 @@ dependencies:
   config:
     - field.storage.node.field_article
     - node.type.article
+    - paragraphs.paragraphs_type.type_geometric
+    - paragraphs.paragraphs_type.type_rounded
+    - paragraphs.paragraphs_type.type_sans
+    - paragraphs.paragraphs_type.type_serif
+    - paragraphs.paragraphs_type.type_slab
+    - paragraphs.paragraphs_type.type_traditional
   module:
     - entity_reference_revisions
 id: node.article.field_article
@@ -20,9 +26,30 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      type_geometric: type_geometric
+      type_rounded: type_rounded
+      type_sans: type_sans
+      type_serif: type_serif
+      type_slab: type_slab
+      type_traditional: type_traditional
     target_bundles_drag_drop:
       type_geometric:
+        enabled: true
         weight: 2
-        enabled: false
+      type_rounded:
+        enabled: true
+        weight: 8
+      type_sans:
+        enabled: true
+        weight: 9
+      type_serif:
+        enabled: true
+        weight: 10
+      type_slab:
+        enabled: true
+        weight: 11
+      type_traditional:
+        enabled: true
+        weight: 12
 field_type: entity_reference_revisions

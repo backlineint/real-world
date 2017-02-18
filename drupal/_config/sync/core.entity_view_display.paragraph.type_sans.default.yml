@@ -1,0 +1,38 @@
+uuid: 32ba690d-6a8e-48cb-9cdc-a38d898c8d34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_sans.field_article
+    - paragraphs.paragraphs_type.type_sans
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_type_system_sans
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      body:
+        - field_article
+id: paragraph.type_sans.default
+targetEntityType: paragraph
+bundle: type_sans
+mode: default
+content:
+  field_article:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,38 @@
+uuid: f58496d3-c72c-42fd-9946-f68a959fd28f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_rounded.field_article
+    - paragraphs.paragraphs_type.type_rounded
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_type_system_rounded
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      body:
+        - field_article
+id: paragraph.type_rounded.default
+targetEntityType: paragraph
+bundle: type_rounded
+mode: default
+content:
+  field_article:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

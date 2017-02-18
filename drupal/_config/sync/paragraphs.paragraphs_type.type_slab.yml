@@ -1,0 +1,6 @@
+uuid: c5c9c03a-1b83-42e5-a497-3a5b8b356e55
+langcode: en
+status: true
+dependencies: {  }
+id: type_slab
+label: 'Type Slab'

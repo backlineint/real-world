@@ -1,0 +1,38 @@
+uuid: 974faeb9-509a-42d5-90f4-d321fbf9d880
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_serif.field_article
+    - paragraphs.paragraphs_type.type_serif
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_type_system_serif
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      body:
+        - field_article
+id: paragraph.type_serif.default
+targetEntityType: paragraph
+bundle: type_serif
+mode: default
+content:
+  field_article:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

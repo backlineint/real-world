@@ -1,0 +1,25 @@
+uuid: c782ded7-fc82-4c5f-a2e9-2dc473db933a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_sans.field_article
+    - paragraphs.paragraphs_type.type_sans
+  module:
+    - text
+id: paragraph.type_sans.default
+targetEntityType: paragraph
+bundle: type_sans
+mode: default
+content:
+  field_article:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden:
+  created: true
+  status: true
+  uid: true

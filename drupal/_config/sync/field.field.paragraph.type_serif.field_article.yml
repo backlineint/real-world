@@ -1,0 +1,21 @@
+uuid: ac34b601-ec0b-4e0d-b10f-ea0715cba64e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article
+    - paragraphs.paragraphs_type.type_serif
+  module:
+    - text
+id: paragraph.type_serif.field_article
+field_name: field_article
+entity_type: paragraph
+bundle: type_serif
+label: Article
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

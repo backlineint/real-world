@@ -1,0 +1,6 @@
+uuid: 1601395d-2085-4297-88fd-24d6b47f77c3
+langcode: en
+status: true
+dependencies: {  }
+id: type_serif
+label: 'Type Serif'

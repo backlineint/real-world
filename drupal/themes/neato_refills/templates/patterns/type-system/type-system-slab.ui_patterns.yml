@@ -1,6 +1,6 @@
-type_system_geometric:
-  label: Type System Geometric
-  description: A article using the geometric type system.
+type_system_slab:
+  label: Type System Slab
+  description: A article using the Slab Serif type system.
   fields:
     body:
       type: text
@@ -19,4 +19,4 @@ type_system_geometric:
         <hr>
         <p class="author">Author Name</p>
   libraries:
-    - neato_refills/geometric
+    - neato_refills/slab

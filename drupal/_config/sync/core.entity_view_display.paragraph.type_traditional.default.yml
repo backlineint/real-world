@@ -1,0 +1,38 @@
+uuid: 74448ff2-290b-413b-9010-7da323421671
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_traditional.field_article
+    - paragraphs.paragraphs_type.type_traditional
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_type_system_traditional
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      body:
+        - field_article
+id: paragraph.type_traditional.default
+targetEntityType: paragraph
+bundle: type_traditional
+mode: default
+content:
+  field_article:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+hidden:
+  created: true
+  uid: true

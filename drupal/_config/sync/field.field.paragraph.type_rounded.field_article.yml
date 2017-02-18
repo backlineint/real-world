@@ -1,0 +1,21 @@
+uuid: 20a5ea55-3638-44d8-aed5-66a999512a12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article
+    - paragraphs.paragraphs_type.type_rounded
+  module:
+    - text
+id: paragraph.type_rounded.field_article
+field_name: field_article
+entity_type: paragraph
+bundle: type_rounded
+label: Article
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

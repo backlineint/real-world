@@ -1,0 +1,6 @@
+uuid: 0cc2d3f4-1de4-45da-9528-ca4cf9339fc6
+langcode: en
+status: true
+dependencies: {  }
+id: type_traditional
+label: 'Type Traditional'

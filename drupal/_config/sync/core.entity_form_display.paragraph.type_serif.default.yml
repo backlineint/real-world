@@ -1,0 +1,25 @@
+uuid: 3b886a67-23f1-4e3a-a7b1-cc5aa0abc248
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_serif.field_article
+    - paragraphs.paragraphs_type.type_serif
+  module:
+    - text
+id: paragraph.type_serif.default
+targetEntityType: paragraph
+bundle: type_serif
+mode: default
+content:
+  field_article:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden:
+  created: true
+  status: true
+  uid: true

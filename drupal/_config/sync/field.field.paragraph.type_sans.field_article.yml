@@ -1,0 +1,21 @@
+uuid: 674eacd3-1d46-4d71-a9bc-1d98adb5420c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_article
+    - paragraphs.paragraphs_type.type_sans
+  module:
+    - text
+id: paragraph.type_sans.field_article
+field_name: field_article
+entity_type: paragraph
+bundle: type_sans
+label: Article
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,25 @@
+uuid: 47300119-1d00-4816-9a60-8b3cb3f63922
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.type_rounded.field_article
+    - paragraphs.paragraphs_type.type_rounded
+  module:
+    - text
+id: paragraph.type_rounded.default
+targetEntityType: paragraph
+bundle: type_rounded
+mode: default
+content:
+  field_article:
+    weight: 0
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+hidden:
+  created: true
+  status: true
+  uid: true
