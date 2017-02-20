@@ -1,6 +1,20 @@
 	
 	<!--DO NOT REMOVE-->
 	{{ patternLabFoot | raw }}
+
+	{# core/drupal library #}
+	<script src="/core/assets/vendor/domready/ready.min.js"></script>
+	<script src="/core/misc/drupalSettingsLoader.js"></script>
+	<script src="/core/misc/drupal.js"></script>
+
+	{# core/jquery library #}
+	<script src="/core/assets/vendor/jquery/jquery.min.js"></script>
+
+	{# core/jquery.once library #}
+	<script src="/core/assets/vendor/jquery-once/jquery.once.min.js"></script>
+
+	<script src="/themes/neato_refills/source/_patterns/01-molecules/Expander/expander.js?{{ cacheBuster }}"></script>
+	<script src="/themes/neato_refills/source/_patterns/02-organisms/Accordion/accordion.js?{{ cacheBuster }}"></script>
 	
 	</body>
 </html>
