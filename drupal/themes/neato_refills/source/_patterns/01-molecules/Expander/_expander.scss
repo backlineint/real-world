@@ -13,7 +13,7 @@
 
   width: 60%;
 
-  .expander-trigger {
+  &__trigger {
     border-bottom: 1px solid $light-gray;
     color: $action-color;
     cursor: pointer;
@@ -31,19 +31,19 @@
     }
   }
 
-  .expander-content p {
+  &__content p {
     color: $base-font-color;
     line-height: $base-line-height;
   }
 
-  .expander-hidden {
+  &--hidden {
     &::before {
       content: "\25BA";
       font-size: $expander-arrow-width;
     }
   }
 
-  .expander-hidden + .expander-content {
+  .expander--hidden + .expander__content {
     display: none;
   }
 }

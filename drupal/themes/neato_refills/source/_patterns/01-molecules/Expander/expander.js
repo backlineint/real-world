@@ -2,10 +2,9 @@
   Drupal.behaviors.expanderBehavior = {
     attach: function (context, settings) {
 
-      $('.expander-trigger').click(function(){
-        $(this).toggleClass("expander-hidden");
+      $('.expander__trigger').click(function(){
+        $(this).toggleClass("expander--hidden");
       });
-
 
     }
   };

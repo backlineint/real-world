@@ -1,0 +1,19 @@
+expander:
+  label: Expander
+  description: An expandable and collapsable section of content.
+  fields:
+    section_title:
+      type: text
+      label: Section Title
+      description: Title for expander section.
+      preview: Expandable Section
+    content:
+      type: text
+      label: Content
+      description: Contentthat can be shown and hidden
+      preview: >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
+  libraries:
+    - expander:
+        js:
+          ../../../source/_patterns/01-molecules/Expander/expander.js: {}
