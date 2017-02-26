@@ -14,3 +14,6 @@ tags:
 * Fields and blocks are components using paragraphs.
 * Paragraphs use UI Patterns to define and map components.
 
+Notes:
+* Provide in-context representations of components
+* Either image in description, or better yet, linking to pattern library component.

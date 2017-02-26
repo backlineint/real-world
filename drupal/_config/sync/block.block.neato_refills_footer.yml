@@ -13,7 +13,7 @@ _core:
 id: neato_refills_footer
 theme: neato_refills
 region: '-1'
-weight: -3
+weight: -6
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

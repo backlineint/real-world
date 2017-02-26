@@ -1,0 +1,60 @@
+uuid: 736a7462-fe1d-4797-99f6-f322de9b9ed1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.side_image
+    - field.field.taxonomy_term.season.field_city
+    - field.field.taxonomy_term.season.field_image
+    - taxonomy.vocabulary.season
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_side_image
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      body:
+        - description
+      topic:
+        - taxonomy_term_title
+      heading:
+        - field_city
+    fields:
+      taxonomy_term_title:
+        plugin_id: taxonomy_term_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: ''
+          class: ''
+          link: false
+id: taxonomy_term.season.side_image
+targetEntityType: taxonomy_term
+bundle: season
+mode: side_image
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  field_city:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  field_image: true

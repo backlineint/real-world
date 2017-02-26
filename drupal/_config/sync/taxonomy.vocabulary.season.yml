@@ -1,0 +1,9 @@
+uuid: a7998632-ebcb-41d0-99b1-48bb6a9d06a4
+langcode: en
+status: true
+dependencies: {  }
+name: Season
+vid: season
+description: 'A Real World Season'
+hierarchy: 0
+weight: 0

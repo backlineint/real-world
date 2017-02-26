@@ -1,0 +1,10 @@
+uuid: c79ecf65-0f81-4351-a5fc-48d5285a1bf8
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.side_image
+label: 'Side Image'
+targetEntityType: taxonomy_term
+cache: true

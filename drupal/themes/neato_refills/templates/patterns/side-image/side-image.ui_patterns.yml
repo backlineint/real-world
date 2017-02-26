@@ -1,0 +1,19 @@
+side_image:
+  label: Side Image
+  description: Content with a gradient image
+  fields:
+    topic:
+      type: text
+      label: Topic
+      description: Topic Label
+      preview: Topic Name
+    heading:
+      type: text
+      label: Heading
+      description: Article heading
+      preview: Message with a gradient image
+    body:
+      type: text
+      label: Body
+      description: Body text
+      preview: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam assumenda nihil suscipit obcaecati sit, cum quod corporis adipisci ipsam, fugiat, quae error. Eaque commodi, dicta quidem explicabo mollitia inventore quibusdam.

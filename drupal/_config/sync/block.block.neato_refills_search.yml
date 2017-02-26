@@ -11,7 +11,7 @@ _core:
 id: neato_refills_search
 theme: neato_refills
 region: '-1'
-weight: -6
+weight: -4
 provider: null
 plugin: search_form_block
 settings:
