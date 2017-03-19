@@ -1,1 +1,8 @@
-{% include "@molecules/Side-Image/side-image.twig" %}
+{# You can access variables here by their UI Pattern field name. For example:
+  {{ kint(image) }}
+#}
+{% include "@molecules/Side-Image/side-image.twig"
+  with {
+    "image_path": file_url(image.field_image.0['#item'].entity.fileuri)
+  }
+%}
