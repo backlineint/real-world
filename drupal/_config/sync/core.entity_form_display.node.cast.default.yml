@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.cast.body
     - field.field.node.cast.field_image
+    - field.field.node.cast.field_season
     - image.style.thumbnail
     - node.type.cast
   module:
@@ -36,6 +37,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_season:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   path:
     type: path
     weight: 30

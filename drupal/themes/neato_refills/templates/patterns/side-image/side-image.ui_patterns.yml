@@ -21,3 +21,7 @@ side_image:
       type: image
       label: Image
       description: Not rendered - used to derive path to backgrond image
+    season_id:
+      type: integer
+      label: Season ID
+      description: Derive link to season cast view

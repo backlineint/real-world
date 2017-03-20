@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.taxonomy_term.side_image
     - field.field.taxonomy_term.season.field_city
     - field.field.taxonomy_term.season.field_image
+    - field.field.taxonomy_term.season.field_season
     - taxonomy.vocabulary.season
   module:
     - ds
@@ -23,14 +24,16 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      image:
-        - field_image
-      body:
-        - description
       topic:
         - taxonomy_term_title
       heading:
         - field_city
+      body:
+        - description
+      image:
+        - field_image
+      season_id:
+        - field_season
     fields:
       taxonomy_term_title:
         plugin_id: taxonomy_term_title
@@ -49,7 +52,7 @@ content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_city:
@@ -61,10 +64,16 @@ content:
     type: string
   field_image:
     type: image
-    weight: 0
+    weight: 3
     label: hidden
     settings:
       image_style: ''
       image_link: ''
+    third_party_settings: {  }
+  field_season:
+    type: entity_reference_entity_id
+    weight: 4
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

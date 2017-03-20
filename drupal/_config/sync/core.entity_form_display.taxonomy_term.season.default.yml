@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.season.field_city
     - field.field.taxonomy_term.season.field_image
+    - field.field.taxonomy_term.season.field_season
     - image.style.thumbnail
     - taxonomy.vocabulary.season
   module:
@@ -37,6 +38,14 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_season:
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
   name:
     type: string_textfield
     weight: 0
