@@ -4,10 +4,11 @@ var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 var shell = require('gulp-shell');
 var notify = require('gulp-notify');
-var browserSync = require('browser-sync').create;
+var browserSync = require('browser-sync').create();
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var fs = require("fs");
+var runSequence = require('run-sequence');
 var config = require("./example.config");
 
 /**
@@ -109,12 +110,27 @@ gulp.task('drush:cr', function () {
  */
 gulp.task('browser-sync', function() {
   browserSync.init({
+    files: ['css/**/*.css', 'js/*.js'],
     port: config.browserSync.port,
     proxy: config.browserSync.hostname,
     open: config.browserSync.openAutomatically,
     reloadDelay: config.browserSync.reloadDelay,
     injectChanges: config.browserSync.injectChanges
   });
+});
+
+/**
+ * Define a task to be called to instruct browser sync to reload.
+ */
+gulp.task('reload', function() {
+  browserSync.reload();
+});
+
+/**
+ * Combined tasks that are run synchronously specifically for twig template changes.
+ */
+gulp.task('flush', function() {
+  runSequence('drush:cr', 'reload');
 });
 
 /**
@@ -125,12 +141,12 @@ gulp.task('watch', function() {
   gulp.watch(['scss/**/*.scss'], ['sass', 'drush:cc']);
 
   // watch js for changes and clear drupal theme cache on change
-  gulp.watch(['js-src/**/*.js'], ['compress', 'drush:cc']);
+  gulp.watch(['js/js-src/**/*.js'], ['compress', 'drush:cc']);
 
   // If user has specified an override, rebuild Drupal cache
   if (!config.twig.useCache) {
-    gulp.watch(['templates/**/*.html.twig'], ['drush:cr']);
+    gulp.watch(['templates/**/*.html.twig'], ['flush']);
   }
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'browser-sync']);

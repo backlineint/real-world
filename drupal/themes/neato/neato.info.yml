@@ -6,13 +6,15 @@ description: Base Drupal theme based on the Neat grid system from Thoughtbot.
 regions:
   header: Header
   featured: Featured
+  breadcrumb: Breadcrumb
   sidebar_first: 'Sidebar first'
   content: Content
   sidebar_second: 'Sidebar second'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
-# Information added by Drupal.org packaging script on 2016-03-18
-version: '8.x-1.4'
+
+# Information added by Drupal.org packaging script on 2016-12-20
+version: '8.x-1.6'
 core: '8.x'
 project: 'neato'
-datestamp: 1458310539
+datestamp: 1482244985

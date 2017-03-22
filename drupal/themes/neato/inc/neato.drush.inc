@@ -46,10 +46,13 @@ function drush_neato_generate($name) {
   // Eliminate hyphens
   $machine_name = str_replace('-', '_', $machine_name);
 
-  // Find theme paths.
+  // Check if custom directory exists.
+  if (!is_dir(drush_get_context('DRUSH_DRUPAL_ROOT').'/themes/custom')) {
+    mkdir(drush_get_context('DRUSH_DRUPAL_ROOT').'/themes/custom', 0755, true);
+  } 
+  
   $neato_path = drush_get_context('DRUSH_DRUPAL_ROOT') . '/' . drupal_get_path('theme', 'neato');
-  $subtheme_path = dirname($neato_path) . '/' . $machine_name;
-  $relative_path = str_replace('neato', $machine_name, drupal_get_path('theme', 'neato'));
+  $subtheme_path = drush_get_context('DRUSH_DRUPAL_ROOT').'/themes/custom/' . $machine_name;
 
   // Make sure bower components are present
   if (!file_exists("$neato_path/bower_components")) {

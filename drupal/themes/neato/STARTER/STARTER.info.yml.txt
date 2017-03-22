@@ -9,6 +9,7 @@ libraries:
 regions:
   header: Header
   featured: Featured
+  breadcrumb: Breadcrumb
   sidebar_first: 'Sidebar first'
   content: Content
   sidebar_second: 'Sidebar second'

@@ -15,23 +15,17 @@
     </section>
   {% endif %}
 
-  {% if messages %}
-    <section id="messages">
-      <div class="outer-wrapper">
-        {{ messages }}
-      </div>
-    </section>
-  {% endif %}
-
-  {% if breadcrumb %}
+  {% if page.breadcrumb %}
     <section id="breadcrumb">
       <div class="outer-wrapper">
-        {{ breadcrumb }}
+        {{ page.breadcrumb }}
       </div>
     </section>
   {% endif %}
 
   <main role="main" class="outer-wrapper">
+    <a id="main-content" tabindex="-1"></a>
+
     {% if page.sidebar_first %}
       <aside id="sidebar-first" role="complementary" class="sidebar">
         {{ page.sidebar_first }}
