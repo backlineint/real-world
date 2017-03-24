@@ -1,0 +1,26 @@
+flex_box:
+  label: Flex Box
+  description: A default size flex box item.
+  fields:
+    image:
+      type: image
+      label: Image
+      description: Image included in the flex box item.
+      preview: >
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="">
+    title:
+      type: text
+      label: Title
+      description: Title of the flex box item
+      preview: Flex Box Item
+    content:
+      type: html
+      label: Content
+      description: Teaser content.
+      preview: >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum molestiae fugiat tenetur fugit atque dignissimos, fugiat natus vitae.</p>
+    nid:
+      type: integer
+      label: ID
+      description: The node id.
+      preview: 12345

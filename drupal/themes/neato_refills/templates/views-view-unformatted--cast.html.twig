@@ -1,0 +1,10 @@
+{% extends "@organisms/flex-boxes/flex-boxes.twig" %}
+
+{% block items %}
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
+  {% for row in rows %}
+    {{ row.content }}
+  {% endfor %}
+{% endblock %}
