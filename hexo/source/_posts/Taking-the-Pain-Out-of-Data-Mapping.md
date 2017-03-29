@@ -46,9 +46,9 @@ Since we're using field_target_entity and field_raw, we're also adding the follo
 
 There is quite a bit more that can be done with the field_target_entity filter.  For example, once you've referenced the target entity, you can access field values on it just as you would fields on the original node:
 
-{% gist 9687354d0ba6a09ac645e8dbe87add2d node--physician--card.html.twig %}
+{% gist 9687354d0ba6a09ac645e8dbe87add2d node--cast--card.html.twig %}
 
-After defining the practice variable that contains the results of field_target_entity for a field, we can reference fields on that entity using notation like practice.field_practice_name.value  It can be pretty useful.
+After defining the season variable that contains the results of field_target_entity for a field, we can reference fields on that entity using notation like season.field_city.value  It can be pretty useful.
 
 ## Preprocessing vs Twig Manipulation
 

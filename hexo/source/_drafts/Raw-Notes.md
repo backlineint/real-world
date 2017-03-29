@@ -5,7 +5,10 @@ tags:
 
 ## Section 1 - How did we get here?
 
-* Alt titles: Introduction. Orgins.
+* Todo:
+* Add a section more generally about what component based theming is
+
+* Alt titles: Introduction. Orgins. How did we get here...
 * Do I need the hero?
 * Should I go with city photos or cast photos?
 
