@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.cast.body
     - field.field.node.cast.field_image
+    - field.field.node.cast.field_season
     - node.type.cast
   module:
     - ds
@@ -14,22 +15,6 @@ dependencies:
     - user
 third_party_settings:
   ds:
-    layout:
-      id: pattern_card
-      path: ''
-      library: ''
-      disable_css: false
-      entity_classes: all_classes
-      settings:
-        pattern:
-          field_templates: only_content
-    regions:
-      header:
-        - node_title
-      image:
-        - field_image
-      copy:
-        - body
     fields:
       node_title:
         plugin_id: node_title
@@ -48,17 +33,28 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 2
     settings:
       trim_length: 600
     third_party_settings: {  }
   field_image:
     type: image
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       image_style: ''
       image_link: content
     third_party_settings: {  }
-hidden:
-  links: true
+  field_season:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -71,11 +71,19 @@
  */
 #}
 
+{# Force caching for entities we’re not rendering #}
+{% set catch_cache = content.field_season|render %}
+
+{% set season = content.field_season|field_target_entity %}
+
+{# Can now access fields on the referenced practice entity like… #}
 {% include "@molecules/card/card.twig"
   with {
     "img_src": file_url(content.field_image|field_target_entity.uri.value),
     "img_alt": content.field_image|field_raw('alt'),
     "header": label|field_value,
+    "season": season.name.value,
+    "city": season.field_city.value,
     "copy": content.body|field_value
   }
 %}
