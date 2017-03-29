@@ -17,3 +17,8 @@ card:
       label: Copy
       description: Body copy content
       preview: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.
+    season:
+      type: entity
+      label: Season
+      description: Season entity - used to derive season and city names for display.
+      preview: n/a

@@ -1,6 +1,15 @@
 {#
-We should be able to eliminate the need for this template all together with the
-'use' property in ui_patterns.yaml, but it isn't working at the moment.  So we'll
-just use a one line include here.
+Getting referenced entities with UI Patterns:
+* The mapping approach below can work, but feels like it defeats the purpose a bit.
+* As long as you don't need to split up the data, you could also make this work by using
+  a display mode for the referenced entity and configuring a UI pattern for that.
+* Future versions of UI Patterns will support sub-patterns which should make this
+  a whole lot easier.
 #}
-{% include "@molecules/card/card.twig" %}
+
+{% include "@molecules/card/card.twig" with
+  {
+    "season": season.field_season.0['#taxonomy_term'].getName,
+    "city": season.field_season.0['#taxonomy_term'].field_city.value
+  }
+%}
