@@ -7,6 +7,10 @@ global-scripts:
   version: VERSION
   js:
     source/js/scripts.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
 geometric:
   css:
     component:
@@ -38,3 +42,8 @@ traditional:
     component:
       //fonts.googleapis.com/css?family=Radley:400,400italic: { type: external }
       //fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic: { type: external }
+
+accordion-tabs-minimal:
+  version: VERSION
+  js:
+    source/_patterns/02-organisms/accordion-tabs/accordion-tabs-minimal.js: {}

@@ -1,0 +1,15 @@
+accordion_tab_item:
+  label: Accordion Tab Item
+  description: A single tab of an accordion
+  fields:
+    header:
+      type: text
+      label: Tab Header
+      description: Title for Tab section.
+      preview: Tab Item
+    content:
+      type: text
+      label: Content
+      description: Content for tab
+      preview: >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
