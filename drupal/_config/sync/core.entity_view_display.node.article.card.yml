@@ -37,5 +37,6 @@ content:
     label: hidden
 hidden:
   comment: true
+  field_article: true
   field_tags: true
   links: true

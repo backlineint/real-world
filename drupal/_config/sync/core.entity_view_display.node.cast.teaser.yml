@@ -23,4 +23,6 @@ content:
     third_party_settings: {  }
   links:
     weight: 100
-hidden: {  }
+hidden:
+  field_image: true
+  field_season: true

@@ -1,0 +1,6 @@
+uuid: 9f9b1693-000b-4f6e-9d3d-f98365d1de10
+langcode: en
+status: true
+dependencies: {  }
+id: details_wrapper
+label: 'Details Wrapper'

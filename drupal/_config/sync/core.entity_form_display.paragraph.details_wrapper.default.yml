@@ -1,0 +1,28 @@
+uuid: 59f33101-6087-4a2b-b36b-e293e66836e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.details_wrapper.field_details
+    - paragraphs.paragraphs_type.details_wrapper
+  module:
+    - paragraphs
+id: paragraph.details_wrapper.default
+targetEntityType: paragraph
+bundle: details_wrapper
+mode: default
+content:
+  field_details:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

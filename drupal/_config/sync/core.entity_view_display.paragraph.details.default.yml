@@ -1,0 +1,48 @@
+uuid: afceafe9-faf9-41fd-afcf-1a3fcc901ddc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.details.field_content
+    - field.field.paragraph.details.field_header
+    - paragraphs.paragraphs_type.details
+  module:
+    - ds
+    - text
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_accordion_tab_item
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      header:
+        - field_header
+      content:
+        - field_content
+id: paragraph.details.default
+targetEntityType: paragraph
+bundle: details
+mode: default
+content:
+  field_content:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_header:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

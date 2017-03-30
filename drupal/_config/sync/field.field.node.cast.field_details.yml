@@ -1,0 +1,51 @@
+uuid: 07d4b59c-90e1-47e9-b597-407454839c3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_details
+    - node.type.cast
+    - paragraphs.paragraphs_type.details_wrapper
+  module:
+    - entity_reference_revisions
+id: node.cast.field_details
+field_name: field_details
+entity_type: node
+bundle: cast
+label: Details
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      details_wrapper: details_wrapper
+    target_bundles_drag_drop:
+      details:
+        weight: 9
+        enabled: false
+      details_wrapper:
+        enabled: true
+        weight: 10
+      type_geometric:
+        weight: 11
+        enabled: false
+      type_rounded:
+        weight: 12
+        enabled: false
+      type_sans:
+        weight: 13
+        enabled: false
+      type_serif:
+        weight: 14
+        enabled: false
+      type_slab:
+        weight: 15
+        enabled: false
+      type_traditional:
+        weight: 16
+        enabled: false
+field_type: entity_reference_revisions

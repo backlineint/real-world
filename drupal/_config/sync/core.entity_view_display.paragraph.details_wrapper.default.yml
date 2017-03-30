@@ -1,0 +1,40 @@
+uuid: af8ac00b-17c4-4d92-8978-94766c1cd0e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.details_wrapper.field_details
+    - paragraphs.paragraphs_type.details_wrapper
+  module:
+    - ds
+    - entity_reference_revisions
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_accordion_tabs_minimal
+      path: ''
+      library: ''
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: only_content
+    regions:
+      tabs:
+        - field_details
+id: paragraph.details_wrapper.default
+targetEntityType: paragraph
+bundle: details_wrapper
+mode: default
+content:
+  field_details:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  uid: true

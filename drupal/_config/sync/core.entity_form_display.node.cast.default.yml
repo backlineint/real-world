@@ -4,12 +4,14 @@ status: true
 dependencies:
   config:
     - field.field.node.cast.body
+    - field.field.node.cast.field_details
     - field.field.node.cast.field_image
     - field.field.node.cast.field_season
     - image.style.thumbnail
     - node.type.cast
   module:
     - image
+    - paragraphs
     - path
     - text
 id: node.cast.default
@@ -29,6 +31,16 @@ content:
     type: datetime_timestamp
     weight: 10
     settings: {  }
+    third_party_settings: {  }
+  field_details:
+    type: entity_reference_paragraphs
+    weight: 34
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
     third_party_settings: {  }
   field_image:
     weight: 32
