@@ -47,3 +47,8 @@ accordion-tabs-minimal:
   version: VERSION
   js:
     source/_patterns/02-organisms/accordion-tabs/accordion-tabs-minimal.js: {}
+
+accordion-tabs:
+  version: VERSION
+  js:
+    source/_patterns/02-organisms/accordion-tabs/accordion-tabs.js: {}

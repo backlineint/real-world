@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_accordion_tabs_minimal
+      id: pattern_accordion_tabs
       path: ''
       library: ''
       disable_css: false
@@ -27,6 +27,15 @@ targetEntityType: paragraph
 bundle: details_wrapper
 mode: default
 content:
+  created:
+    type: timestamp_ago
+    weight: 0
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
   field_details:
     type: entity_reference_revisions_entity_view
     weight: 0
@@ -35,6 +44,12 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-hidden:
-  created: true
-  uid: true
+  uid:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden: {  }
