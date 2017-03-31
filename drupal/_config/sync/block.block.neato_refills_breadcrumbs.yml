@@ -1,6 +1,6 @@
 uuid: ba5cf4e7-1788-493f-b2c9-e5b309ec70d8
 langcode: en
-status: true
+status: false
 dependencies:
   module:
     - system
@@ -10,8 +10,8 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: neato_refills_breadcrumbs
 theme: neato_refills
-region: content
-weight: -4
+region: '-1'
+weight: -1
 provider: null
 plugin: system_breadcrumb_block
 settings:

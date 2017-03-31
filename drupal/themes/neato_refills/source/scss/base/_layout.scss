@@ -65,3 +65,9 @@ body {
 .outer-wrapper {
   @include outer-container;
 }
+
+.page-node-type-cast {
+  main {
+    padding: 0;
+  }
+}

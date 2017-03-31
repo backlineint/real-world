@@ -1,0 +1,96 @@
+uuid: ab4cece1-0c2b-4c0a-a38a-eee5da7876eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.cast_member
+  module:
+    - ctools_block
+    - panels
+id: cast_member-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    033f852d-4982-44f8-b5cd-cedbac57d8a3:
+      id: 'entity_field:node:field_season'
+      label: Season
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: hidden
+        type: entity_reference_label
+        settings:
+          link: false
+        third_party_settings: {  }
+        weight: 0
+      region: left_above
+      weight: 1
+      uuid: 033f852d-4982-44f8-b5cd-cedbac57d8a3
+      context_mapping:
+        entity: node
+    d3a16602-dddc-440e-b747-00fa71536e94:
+      id: 'entity_field:node:body'
+      label: Body
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: hidden
+        type: text_default
+        settings: {  }
+        third_party_settings: {  }
+        weight: 0
+      region: left_above
+      weight: 2
+      uuid: d3a16602-dddc-440e-b747-00fa71536e94
+      context_mapping:
+        entity: node
+    b2776e7e-de85-4b7f-82a9-9d47697ae686:
+      id: 'entity_field:node:field_details'
+      label: Details
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: hidden
+        type: entity_reference_revisions_entity_view
+        settings:
+          view_mode: default
+        third_party_settings: {  }
+        weight: 0
+      region: top
+      weight: 0
+      uuid: b2776e7e-de85-4b7f-82a9-9d47697ae686
+      context_mapping:
+        entity: node
+    e12f52f1-3e51-4bd8-9eaf-ce940b8e32ff:
+      id: 'entity_field:node:field_hero'
+      label: Hero
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: hidden
+        type: entity_reference_revisions_entity_view
+        settings:
+          view_mode: default
+        third_party_settings: {  }
+        weight: 0
+      region: top
+      weight: -1
+      uuid: e12f52f1-3e51-4bd8-9eaf-ce940b8e32ff
+      context_mapping:
+        entity: node
+  id: panels_variant
+  uuid: c608b1df-ba7f-4c38-8b89-e73421fd9c68
+  label: null
+  weight: 0
+  layout: twocol_bricks
+  layout_settings: {  }
+  page_title: ''
+  storage_type: page_manager
+  storage_id: cast_member-panels_variant-0
+  builder: ipe
+page: cast_member
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

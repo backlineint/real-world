@@ -1,0 +1,16 @@
+uuid: e05213c2-61bd-4f47-bac0-ff6e6e7062ab
+langcode: en
+status: true
+dependencies: {  }
+id: cast_member
+label: 'Cast Member'
+description: ''
+use_admin_theme: false
+path: '/cast-member/{node}'
+access_logic: and
+access_conditions: {  }
+parameters:
+  node:
+    machine_name: node
+    type: 'entity:node'
+    label: Node

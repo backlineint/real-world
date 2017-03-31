@@ -5,15 +5,13 @@ dependencies:
   config:
     - field.field.node.cast.body
     - field.field.node.cast.field_details
+    - field.field.node.cast.field_hero
     - field.field.node.cast.field_image
-    - field.field.node.cast.field_name
     - field.field.node.cast.field_season
     - node.type.cast
   module:
     - ds
     - entity_reference_revisions
-    - field_group
-    - image
     - text
     - user
 third_party_settings:
@@ -24,29 +22,6 @@ third_party_settings:
         weight: 0
         label: hidden
         formatter: default
-  field_group:
-    group_hero:
-      children:
-        - field_name
-        - field_image
-      parent_name: ''
-      weight: 0
-      format_type: pattern_formatter
-      format_settings:
-        label: Hero
-        pattern: hero
-        pattern_mapping:
-          'fields:field_name':
-            destination: title
-            weight: 0
-            plugin: fields
-            source: field_name
-          'fields:field_image':
-            destination: image
-            weight: 1
-            plugin: fields
-            source: field_image
-      label: Hero
 id: node.cast.default
 targetEntityType: node
 bundle: cast
@@ -55,41 +30,35 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
   field_details:
     type: entity_reference_revisions_entity_view
-    weight: 5
-    label: above
+    weight: 3
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-  field_image:
-    weight: 3
+  field_hero:
+    type: entity_reference_revisions_entity_view
+    weight: 0
     label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: image
-  field_name:
-    weight: 2
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
   field_season:
-    weight: 4
-    label: above
+    weight: 1
+    label: inline
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   links:
-    weight: 2
+    weight: 4
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_image: true
