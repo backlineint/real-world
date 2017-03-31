@@ -16,6 +16,7 @@ module:
   editor: 0
   entity_reference_revisions: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -41,6 +42,7 @@ module:
   tour: 0
   twig_field_value: 0
   ui_patterns: 0
+  ui_patterns_field_group: 0
   ui_patterns_layouts: 0
   ui_patterns_views: 0
   user: 0

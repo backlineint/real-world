@@ -6,13 +6,47 @@ dependencies:
     - field.field.node.cast.body
     - field.field.node.cast.field_details
     - field.field.node.cast.field_image
+    - field.field.node.cast.field_name
     - field.field.node.cast.field_season
     - node.type.cast
   module:
+    - ds
     - entity_reference_revisions
+    - field_group
     - image
     - text
     - user
+third_party_settings:
+  ds:
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+  field_group:
+    group_hero:
+      children:
+        - field_name
+        - field_image
+      parent_name: ''
+      weight: 0
+      format_type: pattern_formatter
+      format_settings:
+        label: Hero
+        pattern: hero
+        pattern_mapping:
+          'fields:field_name':
+            destination: title
+            weight: 0
+            plugin: fields
+            source: field_name
+          'fields:field_image':
+            destination: image
+            weight: 1
+            plugin: fields
+            source: field_image
+      label: Hero
 id: node.cast.default
 targetEntityType: node
 bundle: cast
@@ -21,34 +55,41 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 3
     settings: {  }
     third_party_settings: {  }
   field_details:
     type: entity_reference_revisions_entity_view
-    weight: 104
+    weight: 5
     label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
   field_image:
-    weight: 102
-    label: above
+    weight: 3
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_name:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_season:
-    weight: 103
+    weight: 4
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   links:
-    weight: 100
+    weight: 2
     settings: {  }
     third_party_settings: {  }
 hidden: {  }

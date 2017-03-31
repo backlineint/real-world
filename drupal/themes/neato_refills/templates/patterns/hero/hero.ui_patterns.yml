@@ -1,0 +1,15 @@
+hero:
+  label: Hero
+  description: Hero banner
+  fields:
+    title:
+      type: text
+      label: Title
+      description: Node title
+      preview: Cast Member
+    image:
+      type: image
+      label: Image
+      description: Image for hero
+      preview: >
+        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_square.png" alt="Logo Image" class="hero-logo">

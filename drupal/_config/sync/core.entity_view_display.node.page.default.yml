@@ -23,4 +23,6 @@ content:
     third_party_settings: {  }
   links:
     weight: 101
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

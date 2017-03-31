@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.cast.body
     - field.field.node.cast.field_details
     - field.field.node.cast.field_image
+    - field.field.node.cast.field_name
     - field.field.node.cast.field_season
     - image.style.thumbnail
     - node.type.cast
@@ -49,6 +50,13 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+  field_name:
+    weight: 35
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_season:
     weight: 33
     settings:
