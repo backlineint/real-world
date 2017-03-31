@@ -12,7 +12,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_accordion_tab_item
+      id: pattern_bullet_item
       path: ''
       library: ''
       disable_css: false
@@ -30,6 +30,15 @@ targetEntityType: paragraph
 bundle: details
 mode: default
 content:
+  created:
+    type: timestamp_ago
+    weight: 0
+    label: above
+    settings:
+      future_format: '@interval hence'
+      past_format: '@interval ago'
+      granularity: 2
+    third_party_settings: {  }
   field_content:
     weight: 1
     label: hidden
@@ -43,6 +52,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-hidden:
-  created: true
-  uid: true
+  uid:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,15 @@
+bullet_item:
+  label: Icon Bullet Point Item
+  description: A single styled bullet point
+  fields:
+    header:
+      type: text
+      label: Header
+      description: Header for bullet section.
+      preview: Tab Item
+    content:
+      type: text
+      label: Content
+      description: Content for bullet
+      preview: >
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio mollitia fugiat facilis enim accusamus quisquam aut, repellendus incidunt quod optio facere labore illo numquam ipsum beatae vero debitis, fugit excepturi.</p>
