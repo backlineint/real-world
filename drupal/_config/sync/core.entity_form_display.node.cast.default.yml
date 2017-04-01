@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.cast.body
     - field.field.node.cast.field_details
     - field.field.node.cast.field_hero
+    - field.field.node.cast.field_highlights
     - field.field.node.cast.field_image
     - field.field.node.cast.field_season
     - image.style.thumbnail
@@ -46,6 +47,16 @@ content:
   field_hero:
     type: entity_reference_paragraphs
     weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+  field_highlights:
+    type: entity_reference_paragraphs
+    weight: 26
     settings:
       title: Paragraph
       title_plural: Paragraphs

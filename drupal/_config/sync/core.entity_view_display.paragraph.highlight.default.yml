@@ -1,18 +1,18 @@
-uuid: afceafe9-faf9-41fd-afcf-1a3fcc901ddc
+uuid: fd67be6f-03fc-4256-a82b-36711658a836
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.details.field_content
-    - field.field.paragraph.details.field_header
-    - paragraphs.paragraphs_type.details
+    - field.field.paragraph.highlight.field_content
+    - field.field.paragraph.highlight.field_header
+    - paragraphs.paragraphs_type.highlight
   module:
     - ds
     - text
 third_party_settings:
   ds:
     layout:
-      id: pattern_expander
+      id: pattern_accordion_tab_item
       path: ''
       library: ''
       disable_css: false
@@ -21,13 +21,13 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      section_title:
+      header:
         - field_header
       content:
         - field_content
-id: paragraph.details.default
+id: paragraph.highlight.default
 targetEntityType: paragraph
-bundle: details
+bundle: highlight
 mode: default
 content:
   field_content:

@@ -1,0 +1,9 @@
+generic_wrapper:
+  label: Generic Wrapper
+  description: A generic wrapping div
+  fields:
+    contents:
+      type: markup
+      label: Wrapper
+      description: Wrapping div
+      preview: Just a wrapper - anything can go here...

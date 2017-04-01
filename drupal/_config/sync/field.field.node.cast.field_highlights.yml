@@ -1,0 +1,60 @@
+uuid: 9455e1ed-4b6e-4f74-94b6-4c2a5e0f6ccd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_highlights
+    - node.type.cast
+    - paragraphs.paragraphs_type.highlights_wrapper
+  module:
+    - entity_reference_revisions
+id: node.cast.field_highlights
+field_name: field_highlights
+entity_type: node
+bundle: cast
+label: Highlights
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      highlights_wrapper: highlights_wrapper
+    target_bundles_drag_drop:
+      details:
+        weight: 12
+        enabled: false
+      details_wrapper:
+        weight: 13
+        enabled: false
+      hero:
+        weight: 14
+        enabled: false
+      highlight:
+        weight: 15
+        enabled: false
+      highlights_wrapper:
+        enabled: true
+        weight: 16
+      type_geometric:
+        weight: 17
+        enabled: false
+      type_rounded:
+        weight: 18
+        enabled: false
+      type_sans:
+        weight: 19
+        enabled: false
+      type_serif:
+        weight: 20
+        enabled: false
+      type_slab:
+        weight: 21
+        enabled: false
+      type_traditional:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions

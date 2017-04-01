@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.cast.body
     - field.field.node.cast.field_details
     - field.field.node.cast.field_hero
+    - field.field.node.cast.field_highlights
     - field.field.node.cast.field_image
     - field.field.node.cast.field_season
     - node.type.cast
@@ -44,6 +45,14 @@ content:
   field_hero:
     type: entity_reference_revisions_entity_view
     weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  field_highlights:
+    type: entity_reference_revisions_entity_view
+    weight: 5
     label: hidden
     settings:
       view_mode: default

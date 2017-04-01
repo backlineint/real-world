@@ -1,0 +1,33 @@
+uuid: 58714a81-520f-4c58-a635-f2544a8c24d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlight.field_content
+    - field.field.paragraph.highlight.field_header
+    - paragraphs.paragraphs_type.highlight
+  module:
+    - text
+id: paragraph.highlight.default
+targetEntityType: paragraph
+bundle: highlight
+mode: default
+content:
+  field_content:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_header:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

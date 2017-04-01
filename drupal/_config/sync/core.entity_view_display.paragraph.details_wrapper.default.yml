@@ -11,7 +11,7 @@ dependencies:
 third_party_settings:
   ds:
     layout:
-      id: pattern_icon_bullet_points
+      id: pattern_generic_wrapper
       path: ''
       library: ''
       disable_css: false
@@ -20,7 +20,7 @@ third_party_settings:
         pattern:
           field_templates: only_content
     regions:
-      bullets:
+      contents:
         - field_details
 id: paragraph.details_wrapper.default
 targetEntityType: paragraph

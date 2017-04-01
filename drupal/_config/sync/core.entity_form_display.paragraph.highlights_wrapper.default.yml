@@ -1,0 +1,28 @@
+uuid: 4489836d-c5c5-44ac-a16d-2737f3950eac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.highlights_wrapper.field_highlights_wrapper
+    - paragraphs.paragraphs_type.highlights_wrapper
+  module:
+    - paragraphs
+id: paragraph.highlights_wrapper.default
+targetEntityType: paragraph
+bundle: highlights_wrapper
+mode: default
+content:
+  field_highlights_wrapper:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

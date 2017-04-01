@@ -24,7 +24,7 @@ variant_settings:
           link: false
         third_party_settings: {  }
         weight: 0
-      region: left_above
+      region: right_above
       weight: 1
       uuid: 033f852d-4982-44f8-b5cd-cedbac57d8a3
       context_mapping:
@@ -41,7 +41,7 @@ variant_settings:
         third_party_settings: {  }
         weight: 0
       region: left_above
-      weight: 2
+      weight: 1
       uuid: d3a16602-dddc-440e-b747-00fa71536e94
       context_mapping:
         entity: node
@@ -57,8 +57,8 @@ variant_settings:
           view_mode: default
         third_party_settings: {  }
         weight: 0
-      region: top
-      weight: 0
+      region: right_above
+      weight: 2
       uuid: b2776e7e-de85-4b7f-82a9-9d47697ae686
       context_mapping:
         entity: node
@@ -75,8 +75,25 @@ variant_settings:
         third_party_settings: {  }
         weight: 0
       region: top
-      weight: -1
+      weight: -2
       uuid: e12f52f1-3e51-4bd8-9eaf-ce940b8e32ff
+      context_mapping:
+        entity: node
+    b23dbad4-472a-44ca-b0b0-b177fa2d26db:
+      id: 'entity_field:node:field_highlights'
+      label: Highlights
+      provider: ctools_block
+      label_display: '0'
+      formatter:
+        label: hidden
+        type: entity_reference_revisions_entity_view
+        settings:
+          view_mode: default
+        third_party_settings: {  }
+        weight: 0
+      region: top
+      weight: -1
+      uuid: b23dbad4-472a-44ca-b0b0-b177fa2d26db
       context_mapping:
         entity: node
   id: panels_variant

@@ -1,0 +1,60 @@
+uuid: cceb39e5-1063-4719-815f-081e6b6b1a41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_highlights_wrapper
+    - paragraphs.paragraphs_type.highlight
+    - paragraphs.paragraphs_type.highlights_wrapper
+  module:
+    - entity_reference_revisions
+id: paragraph.highlights_wrapper.field_highlights_wrapper
+field_name: field_highlights_wrapper
+entity_type: paragraph
+bundle: highlights_wrapper
+label: 'Highlights Wrapper'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      highlight: highlight
+    target_bundles_drag_drop:
+      details:
+        weight: 12
+        enabled: false
+      details_wrapper:
+        weight: 13
+        enabled: false
+      hero:
+        weight: 14
+        enabled: false
+      highlight:
+        enabled: true
+        weight: 15
+      highlights_wrapper:
+        weight: 16
+        enabled: false
+      type_geometric:
+        weight: 17
+        enabled: false
+      type_rounded:
+        weight: 18
+        enabled: false
+      type_sans:
+        weight: 19
+        enabled: false
+      type_serif:
+        weight: 20
+        enabled: false
+      type_slab:
+        weight: 21
+        enabled: false
+      type_traditional:
+        weight: 22
+        enabled: false
+field_type: entity_reference_revisions
